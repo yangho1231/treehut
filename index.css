@@ -1,0 +1,75 @@
+#scroll {
+  width: 100vw;
+  height: 65vh;
+  position: relative;
+
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+
+  height: 15vh;
+
+}
+li {
+  margin-right: 40px;
+  margin-top: 10px;
+  font-size: 20px;
+  position: relative;
+
+}
+ .img{
+  background-image: url('https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/logo.png?15545387235156860073');
+  filter: brightness(0) invert(1);
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 36px;
+  height: 90px;
+  width: 200px;
+  margin-top: 16px;
+  /*z-index: 900px;*/
+}
+#crossfade > img {
+    width: 100vw;
+    height: 65vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    opacity: 0;
+    z-index: 0;
+    -webkit-backface-visibility: hidden;
+    animation: imageAnimation 32s linear infinite 0s;
+
+}
+
+
+#crossfade > img:nth-child(2) {
+    animation-delay: 8s;
+}
+#crossfade > img:nth-child(3) {
+    animation-delay: 16s;
+}
+
+
+@keyframes imageAnimation {
+  0% {
+   opacity:1;
+ }
+ 45% {
+ opacity:1;
+}
+ 55% {
+ opacity:0;
+
+ }
+ 100% {
+ opacity:0;
+}
+}
+h2 {
+  position: absolute;
+  z-index: 900;
+}
