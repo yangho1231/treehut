@@ -17,10 +17,17 @@
   },
   "homepage": "https://github.com/yangho1231/treehut#readme",
   "dependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
     "massive": "^2.5.0"
   }
 }
