@@ -96,7 +96,25 @@
 
   <h2>HOT TREE HUT ITEMS</h2>
   <div class = 'product-info'>
-    <div ng-repeat = 'data in datas'>
+    <div ng-repeat = 'data in fours'>
+      <div class = 'widthset'>
+      <div class = 'display'>
+        <img class = 'img-home' ng-src = '{{data.img1}}'></img>
+      </div>
+      <div>{{data.product_name}}</div>
+      <div>from ${{data.product_price}}.00 USD</div>
+      </div>
+    </div>
+    <div ng-repeat = 'data in sunglasses'>
+      <div class = 'widthset'>
+      <div class = 'display'>
+        <img class = 'img-home' ng-src = '{{data.img1}}'></img>
+      </div>
+      <div>{{data.product_name}}</div>
+      <div>from ${{data.product_price}}.00 USD</div>
+      </div>
+    </div>
+    <div ng-repeat = 'data in stains'>
       <div class = 'widthset'>
       <div class = 'display'>
         <img class = 'img-home' ng-src = '{{data.img1}}'></img>
@@ -107,7 +125,19 @@
     </div>
   </div>
   </section>
+  <div class = 'review'>
+    <p>Test</p>
+  </div>
 
+  <div class = 'video'>
+    <img id = 'video-image' src = '//cdn.shopify.com/s/files/1/0667/0685/t/2/assets/treehut-video-thumbnail.jpg?6854617317335217130' onclick= "this.style.display='none'; opactiy: 1">
+    <a>
+      <video id = 'video-play' onclick="this.paused ? this.play() : this.pause();" controls>
+        <source src ='https://cdn.shopify.com/s/files/1/0667/0685/files/treehut-video.mp4?8707800673442211972' type='video/mp4'>
+      </video>
+    </a>
+  </div>
+<!-- onclick= "this.style.display='none';" -->
 
 
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

@@ -88,7 +88,7 @@ li {
 }
 .product-page {
 
-  width: 60%;
+  width: 90%;
   margin: auto;
 
 }
@@ -100,9 +100,28 @@ li {
 
 }
 .widthset {
-  width: 200px;
+  width: 250px;
+  margin-top: 20px;
 }
 .img-home {
-  heigth: 200px;
-  width: 200px;
+  heigth: 300px;
+  width: 230px;
+}
+.review {
+  background-color: #EDE9DD;
+  height: 60vh;
+  width: 100%;
+}
+.video {
+  position: relative;
+}
+#video-image {
+  width: 100%;
+  position: absolute;
+  z-index: 900;
+
+
+}
+#video-play {
+  width: 100%;
 }
