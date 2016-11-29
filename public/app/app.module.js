@@ -9,5 +9,6 @@ angular.module('myApp',['ui.router'])
       url: '/hot',
       templateUrl: './assets/views/hot.html'
     });
-  })
-;
+    $urlRouterProvider
+    .otherwise('/');
+  });

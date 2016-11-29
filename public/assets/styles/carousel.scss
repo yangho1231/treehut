@@ -4,6 +4,8 @@
 
 body html {
   margin: 0;
+  display: inline-block;
+  position: relative;
 }
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
 display: block;
@@ -84,6 +86,23 @@ li {
   /*padding-left: 40px*/
 
 }
-.col-sm-4 {
+.product-page {
 
+  width: 60%;
+  margin: auto;
+
+}
+.product-info{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.widthset {
+  width: 200px;
+}
+.img-home {
+  heigth: 200px;
+  width: 200px;
 }

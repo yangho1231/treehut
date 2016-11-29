@@ -1,6 +1,6 @@
 <body ng-controller = 'mainCtrl'>
 
-    <div id = "myCarousel" class = 'carousel slide' data-ride ='carousel' data-interval = '5000' data-pause = 'hover'>
+    <div id = "myCarousel" class = 'carousel slide' data-ride ='carousel' data-interval = '3000' data-pause = 'hover'>
       <ol class = 'carousel-indicators'>
         <li data-target = '#myCarousel' data-slide-to = '0' class = 'active'></li>
         <li data-target = '#myCarousel' data-slide-to = '1'></li>
@@ -44,19 +44,39 @@
     <a class = 'carousel-control right' href = '#myCarousel' data-slide='next'>
       <span class = 'icon-next'></span>
     </a>
+
     <div class = 'main-text'>
-      <div class = 'logo'>
+      <div ui-sref = 'home' class = 'logo'>
 
       </div>
       <ul>
         <li ui-sref = 'hot'>HOT</li>
-        <li>WATCHES</li>
+
+
+
+        <div class="dropdown">
+  <li type="button" data-toggle="dropdown">WATCHES
+  <span class="caret"></span></li>
+  <ul class="dropdown-menu">
+    <li><a href="#">1.7 INCHES(DIAMETERS)</a></li>
+    <li><a href="#">1.3 INCHES(DIAMETERS)</a></li>
+    <li><a href="#">ALL WOODEN WATCHES</a></li>
+    <li><a href="#">CANVAS WATCHES</a></li>
+    <li><a href="#">STAINLESS STEEL + WOOD</a></li>
+    <li><a href="#">COUPLES WATCHES</a></li>
+    <li><a href="#">SHOP OUR INSTA</a></li>
+  </ul>
+</div>
+
+
         <li>SUNGLASSES</li>
         <li>SALE</li>
         <li>OUR STORY</li>
       </ul>
     </div>
   </div>
+
+
   <div class = 'ad'></div>
 
   <div class = 'row'>
@@ -71,12 +91,27 @@
     </div>
 
   </div>
+
+  <section class = 'product-page'>
+
+  <h2>HOT TREE HUT ITEMS</h2>
+  <div class = 'product-info'>
+    <div ng-repeat = 'data in datas'>
+      <div class = 'widthset'>
+      <div class = 'display'>
+        <img class = 'img-home' ng-src = '{{data.img1}}'></img>
+      </div>
+      <div>{{data.product_name}}</div>
+      <div>from ${{data.product_price}}.00 USD</div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<div ng-repeat = 'data in datas'>
-<img ng-src = '{{data.product_img}}'></img>
-<div>{{data.product_name}}</div>
-<div>{{data.product_price}}</div>
-</div>
+
 </body>
