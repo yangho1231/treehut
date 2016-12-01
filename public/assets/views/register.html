@@ -1,0 +1,53 @@
+<menu-directive></menu-directive>
+    <h2>Create Account</h2>
+    <div>
+    <form ng-submit='onSubmit(theForm.$valid)' name='theForm' novalidate='novalidate'>
+        <div>
+            <label for="firstName">First name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" ng-model = 'formModel.firstName'>
+        </div>
+
+        <div>
+            <label for="lastName">Last name</label>
+            <input type="text" name="lastName" id="lastName" class="form-control" ng-model = 'formModel.lastName' >
+        </div>
+        <div>
+           <label for="username">Username</label>
+            <input type="text" name="userName" id="userName" class="form-control" ng-model = 'formModel.userName' >
+      </div>
+
+        <div class = 'form-group' ng-class = "{
+          'has-error': !theForm.email.$valid && (!theForm.$pristine || theForm.$submitted),
+          'has-success': theForm.email.$valid && (!theForm.$pristine || theForm.$submitted)
+          }
+          ">
+            <label for="email">email</label>
+            <input type="email" name="email" id="email" class="form-control" ng-model = 'formModel.email'
+            required = 'required'
+          >
+          <p class = 'help-block' ng-show='theForm.email.$error.required && (!theForm.$pristine || theForm.$submitted)'>
+            This field is required
+          </p>
+          <p class = 'help-block' ng-show='theForm.email.$error.email && (!theForm.$pristine || theForm.$submitted)'>
+            Please enter @
+          </p>
+          <pre>Validation? {{theForm.email.$error | json}}</pre>
+          <pre>Field Valid? {{ theForm.email.$valid}}</pre>
+          <pre>For Pristine? {{theForm.$pristine}}</pre>
+          <pre>Form Submitted? {{theForm.$submitted}}</pre>
+          <pre>Form Validated? {{theForm.$valid}}</pre>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model = 'formModel.password' >
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary"  type =  'submit'>Register</button>
+
+        </div>
+    </form>
+    <pre>{{formModel | json}}</pre>
+    <pre>{{theForm | json}}</pre>
+</div>

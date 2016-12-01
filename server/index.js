@@ -25,6 +25,9 @@ app.get('/api/product', controller.GetAll);
 app.get('/api/product/four', controller.GetFour);
 app.get('/api/product/stain', controller.GetFourStainless);
 app.get('/api/product/sunglass', controller.GetFourSunGlasses);
+app.get('/api/product/:productId', controller.GetOne);
+app.post('/api/user', controller.PutUser);
+app.get('/api/user', controller.GetUser);
 
 app.listen(3000, function() {
   console.log("listening");

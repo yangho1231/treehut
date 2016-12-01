@@ -20,7 +20,7 @@ module.exports = {
       else {
         res.send(four);
       }
-    })
+    });
   },
   GetFourStainless: function(req, res, next) {
     db.get_four_stainless(function(err, four) {
@@ -30,7 +30,7 @@ module.exports = {
       else {
         res.send(four);
       }
-    })
+    });
   },
   GetFourSunGlasses: function(req, res, next) {
     db.get_four_sunglass(function(err, four) {
@@ -39,6 +39,37 @@ module.exports = {
       }
       else {
         res.send(four);
+      }
+    });
+  },
+  GetOne: function(req, res, next) {
+    // console.log(req.params.productId);
+    db.get_one([req.params.productId], function(err, one) {
+      if(err) {
+        res.status(500).send(err);
+      }
+      else {
+        res.send(one);
+      }
+    });
+  },
+  PutUser: function(req, res, next) {
+    db.post_user([req.body.firstName, req.body.lastName, req.body.userName, req.body.email, req.body.password], function(err, user) {
+      if(err) {
+        res.status(500).send(err);
+      }
+      else {
+        res.send(user);
+      }
+    });
+  },
+  GetUser: function(req, res, next) {
+    db.get_user(function(err, user) {
+      if(err) {
+        res.status(500).send(err);
+      }
+      else {
+        res.send(user);
       }
     })
   }

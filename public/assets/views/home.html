@@ -50,11 +50,18 @@
 
       </div>
       <ul>
-        <li ui-sref = 'hot'>HOT</li>
+        <li ui-sref = 'register'>HOT</li>
+        <li class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </li>
 
 
-
-        <div class="dropdown">
+  <!-- <div class="dropdown">
   <li type="button" data-toggle="dropdown">WATCHES
   <span class="caret"></span></li>
   <ul class="dropdown-menu">
@@ -66,7 +73,7 @@
     <li><a href="#">COUPLES WATCHES</a></li>
     <li><a href="#">SHOP OUR INSTA</a></li>
   </ul>
-</div>
+</div> -->
 
 
         <li>SUNGLASSES</li>
@@ -116,7 +123,8 @@
     </div>
     <div ng-repeat = 'data in stains'>
       <div class = 'widthset'>
-      <div class = 'display'>
+      <div class = 'display' ng-click='getIndividual($index)' ui-sref = 'info({id: data.product_id})'>
+
         <img class = 'img-home' ng-src = '{{data.img1}}'></img>
       </div>
       <div>{{data.product_name}}</div>
@@ -137,11 +145,9 @@
       </video>
     </a>
   </div>
+  <div>Type Something</div>
 <!-- onclick= "this.style.display='none';" -->
 
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 </body>

@@ -32,4 +32,21 @@ angular.module('myApp').service('mainSvc', function($http) {
       return res;
     });
   };
+  this.getIndividual = function(id) {
+    console.log(id);
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/product/' + id
+    }).then(function(res) {
+      // console.log(res.data);
+      return res.data[0];
+    });
+  };
+  this.postUser = function(user) {
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/api/user',
+      data: user
+    })
+  }
 });
