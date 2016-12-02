@@ -7,7 +7,13 @@ img4 TEXT,
 img5 TEXT,
 img6 TEXT
 );
-
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    name TEXT,
+    type TEXT,
+    google_id TEXT,
+    photo TEXT
+ )
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     user_firstname TEXT,

@@ -29,7 +29,13 @@ max-width: 100%;
 /*.carousel-indicators li.active {
   border-radius: 0;
   width: 50px;
-}*/
+// }*/
+.carousel-h1 {
+  font-size: 3vw;
+}
+.carousel-h2 {
+  font-size: 2.3vw;
+}
 .main-text {
   position: fixed;
   top: 20px;
@@ -58,6 +64,14 @@ li {
  width: 200px;
  /*z-index: 900px;*/
 }
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+
+.navbar li { color: #000 }
  #button {
   background: Transparent;
   border: 1px solid white;

@@ -1,9 +1,10 @@
-angular.module('myApp').controller('mainCtrl', function($scope, mainSvc, $location) {
+angular.module('myApp').controller('mainCtrl', function($scope, mainSvc, $location, $stateParams) {
+  console.log($stateParams);
+  $scope.customer = $stateParams.user;
   $scope.getData = function() {
     mainSvc.getData().then(function(res) {
       // console.log(res.data);
       $scope.datas = res.data;
-
     });
   };
   $scope.$on('$routeChangeSuccess', function () {
