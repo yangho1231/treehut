@@ -3,4 +3,11 @@
 
 
 <div>{{data.product_name}}</div>
-<img ng-src = '{{data.img1}}'></img>
+<div class = 'mainImg'><img ng-src="{{mainImg}}" alt=""></div>
+<ol class = 'info-img'>
+<li><img class = 'info-img' ng-src = '{{data.img1}}' ng-click="changeImage(data.img1)"></img></li>
+<li><img class = 'info-img' ng-src = '{{data.img2}}'></img></li>
+<li><img class = 'info-img' ng-src = '{{data.img3}}'></img><li>
+<li><img class = 'info-img' ng-src = '{{data.img4}}'></img></li>
+</li><img class = 'info-img' ng-src = '{{data.img5}}'></img></li>
+</ol>

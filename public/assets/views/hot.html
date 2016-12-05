@@ -2,11 +2,44 @@
   <div ui-sref = 'home' class = 'logo-menu'>
 
   </div>
-  <ul>
+  <ul class = 'hot-ul'>
     <li class = 'li-menu'ui-sref = 'hot'>HOT</li>
     <li class = 'li-menu'>WATCHES</li>
     <li class = 'li-menu'>SUNGLASSES</li>
     <li class = 'li-menu'>SALE</li>
     <li class = 'li-menu'>OUR STORY</li>
+    <li class = 'li-menu' ui-sref = 'login'>
+
+        <i class="fa fa-fw fa-1x fa-user" aria-hidden="true"></i>
+
+    </li>
   </ul>
+</div>
+
+
+<div class = 'main-menu-wrapper'>
+  <div>
+    <button ng-click='prev()' ng-disabled = 'currentPage === 1'>Previous</button>
+    <span>Page {{currentPage}}</span>
+    <button ng-click='next()' ng-disabled = 'currentPage === maxPages'>Next</button>
+  </div>
+<div class = 'main-menu-left'>
+  <hr>
+    <h3>Main Menu</h3>
+  </hr>
+  <hr>
+  </hr>
+  <ul>
+    <li>HOT</li>
+    <li>WATCHES</li>
+    <li>SUNGLASSES</li>
+  </ul>
+</div>
+<div class = 'product-content'>
+  <div class = 'product-wrapper' ng-repeat = "data in datas">
+    <div>{{data.product_name}}</div>
+    <img class = 'img-display' ng-src = "{{data.img1}}"></img>
+  </div>
+
+</div>
 </div>

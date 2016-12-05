@@ -1,9 +1,17 @@
+<menu-directive></menu-directive>
 <h2>
   Customer login
 </h2>
 <form id = 'myLogin'>
   Username: <input type = 'text' name= 'username' id = 'username' ng-model = 'user.name'>
   Password: <input type = 'password' name = 'password' id = 'password' ng-model = 'user.password'>
+
+
   <button type = 'button' ng-click = 'login(user)'>Login</button>
+
+
+  <div>New Customer? <a ui-sref = 'register'>Sign up --></a></div>
+
+
 
 </form>

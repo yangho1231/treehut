@@ -54,13 +54,17 @@ module.exports = {
     });
   },
   PutUser: function(req, res, next) {
-    db.post_user([req.body.firstname, req.body.lastname, req.body.username, req.body.email, req.body.password], function(err, user) {
-      if(err) {
-        res.status(500).send(err);
-      }
-      else {
-        res.send(user);
-      }
+    db.check_username([req.body.username], function(err, username) {
+      console.log(username);
+      if(err) return next(err);
+      else if(username[0]) res.send("username taken")
+        else if (!username[0]) {    db.post_user([req.body.firstname, req.body.lastname, req.body.username, req.body.email, req.body.password], function(err, user) {
+            if(err) return next(err);
+            else {
+              res.send(user);
+            }
+          });
+        }
     });
   },
   GetUser: function(req, res, next) {
@@ -82,5 +86,15 @@ module.exports = {
         return res.send(user);
       }
     });
+  },
+  pageNum: function(req, res, next) {
+    db.get_page_num([req.query.page], function(err, pageNum) {
+      if(err) {
+        return res.status(500).send(err);
+      }
+      else {
+        return res.send(pageNum);
+      }
+    })
   }
 };

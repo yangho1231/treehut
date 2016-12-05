@@ -77,6 +77,7 @@ app.get('/api/product/:productId', controller.GetOne);
 app.post('/api/user', controller.PutUser);
 app.get('/api/user', controller.GetUser);
 app.post('/api/login', controller.login);
+app.post('/api/product/', controller.pageNum);
 
 app.listen(3000, function() {
   console.log("listening");

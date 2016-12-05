@@ -63,23 +63,26 @@
         <div ui-sref = 'home' class = 'logo'>
 
         </div>
-        <li><a href = "#home">HOT</a></li>
+        <li ui-sref = "hot">HOT</li>
         <li class = 'dropdown'>
-          <a class = 'dropbtn' href = "#aboutme">WATCHES
+          <a ui-sref = "#aboutme"class = 'dropbtn'>WATCHES
             <div class = 'dropdown-content'>
               <a href = '#'>Linkdddddddddddddddddddddd</a>
               <a href = '#'>Link</a>
               <a href = '#'>Link</a>
             </div>
-            </a>
+          </a>
 
         </li>
-        <li><a href = "#projects">SUNGLASSES</a>
+        <li><a ui-sref = "#projects">SUNGLASSES
 
-
+        </a>
         </li>
-        <li><a href = "#contacts">SALE</a></li>
-        <li><a href = "#contacts">OUR STORY</a></li>
+        <li ui-href = "#contacts">SALE</li>
+        <li ui-sref = "#contacts">OUR STORY</li>
+        <li ui-sref = "login"><i class="fa fa-fw fa-1x fa-user" aria-hidden="true"></i></li>
+        <li ui-sref = "cart">CART</li>
+        <li ui-sref = "myPage">MY PAGE</li>
       </ul>
     </div>
   </div>
@@ -180,7 +183,9 @@
         <source src ='https://cdn.shopify.com/s/files/1/0667/0685/files/treehut-video.mp4?8707800673442211972' type='video/mp4'>
       </video>
   </div>
-  <div>Welcome {{customer}}</div>
+  <div>Welcome {{customer}}
+    <i class="fa fa-user-o" aria-hidden="true"></i></a></li>
+  </div>
 <!-- onclick= "this.style.display='none';" -->
 
 

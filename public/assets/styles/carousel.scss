@@ -42,18 +42,18 @@ max-width: 100%;
   width: 100vw;
   z-index: 900;
 }
-ul {
-  display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-}
-li {
-  color: white;
-  margin-right: 40px;
-  margin-top: 10px;
-  font-size: 19px;
-  position: relative;
-}
+// ul {
+//   display: flex;
+//   justify-content: flex-end;
+//   list-style-type: none;
+// }
+// li {
+//   color: white;
+//   margin-right: 40px;
+//   margin-top: 10px;
+//   font-size: 19px;
+//   position: relative;
+// }
 .logo {
  background-image: url('https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/logo.png?15545387235156860073');
  filter: brightness(0) invert(1);
@@ -67,10 +67,17 @@ li {
 
 .navbar {
    background-color: transparent;
-   background: transparent;
    border-color: transparent;
 }
-
+// .fa.fa-fw.fa-1x.fa-user{
+//   color: white;
+// }
+.nav.navbar-nav.navbar-right li {
+    color: white;
+}
+.navbar-nav > li{
+  margin-right: 40px;
+}
 .navbar li { color: #000 }
  #button {
   background: Transparent;
@@ -180,7 +187,9 @@ li {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
+.invalid {
+  border: 1px solid red;
+}
 /* Change the background color of the dropdown button when the dropdown content is shown */
 // .dropdown:hover .dropbtn {
 //     background-color: #3e8e41;

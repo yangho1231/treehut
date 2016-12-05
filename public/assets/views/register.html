@@ -11,7 +11,7 @@
             <label for="lastname">Last name</label>
             <input type="text" name="lastname" id="lastname" class="form-control" ng-model = 'formModel.lastname' >
         </div>
-        <div>
+        <div ng-class="{'has-error has-feedback': userError}">
            <label for="username">Username</label>
             <input type="text" name="username" id="username" class="form-control" ng-model = 'formModel.username' >
       </div>
@@ -31,11 +31,11 @@
           <p class = 'help-block' ng-show='theForm.email.$error.email && (!theForm.$pristine || theForm.$submitted)'>
             Please enter @
           </p>
-          <pre>Validation? {{theForm.email.$error | json}}</pre>
+          <!-- <pre>Validation? {{theForm.email.$error | json}}</pre>
           <pre>Field Valid? {{ theForm.email.$valid}}</pre>
           <pre>For Pristine? {{theForm.$pristine}}</pre>
           <pre>Form Submitted? {{theForm.$submitted}}</pre>
-          <pre>Form Validated? {{theForm.$valid}}</pre>
+          <pre>Form Validated? {{theForm.$valid}}</pre> -->
         </div>
 
         <div>
@@ -48,6 +48,6 @@
 
         </div>
     </form>
-    <pre>{{formModel | json}}</pre>
-    <pre>{{theForm | json}}</pre>
+    <!-- <pre>{{formModel | json}}</pre>
+    <pre>{{theForm | json}}</pre> -->
 </div>

@@ -1,4 +1,6 @@
 angular.module('myApp').controller('infoCtrl', function($scope, mainSvc, $stateParams, $state) {
+
+
   $scope.getIndividual = function(id) {
     mainSvc.getIndividual(id).then(function(res) {
       // console.log(res);
@@ -6,4 +8,10 @@ angular.module('myApp').controller('infoCtrl', function($scope, mainSvc, $stateP
     });
   };
   $scope.getIndividual($stateParams.id);
+
+  $scope.changeImage = function(imgUrl) {
+    console.log(imgUrl);
+      $scope.mainImg = imgUrl;
+  }
+
 });

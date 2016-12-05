@@ -21,6 +21,15 @@ CREATE TABLE users (
     user_name TEXT,
     user_email TEXT,
  );
+ CREATE TABLE users1 (
+  user_id SERIAL PRIMARY KEY,
+  firstname TEXT,
+  lastname TEXT,
+  username TEXT NOT NULL UNIQUE,
+  email TEXT,
+  password TEXT
+ )
+
 
 /*INSERT IMAGE*/
 INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (1,'http://cdn.shopify.com/s/files/1/0667/0685/products/004-1_grande.jpg?v=1479952382','http://cdn.shopify.com/s/files/1/0667/0685/products/004-1-3_grande.jpg?v=1479952382',

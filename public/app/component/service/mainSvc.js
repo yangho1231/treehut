@@ -1,5 +1,5 @@
 angular.module('myApp').service('mainSvc', function($http, $rootScope) {
-  this.customer = {}
+  this.customer = {};
   this.getData = function() {
     return $http({
       method: 'GET',
@@ -55,6 +55,14 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
       method: 'POST',
       url: 'http://localhost:3000/api/login',
       data: user
+    });
+  };
+  this.changeImage = function(imgId) {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/img'
+    }).then(function(res) {
+      return res;
     });
   };
 });
