@@ -1,12 +1,22 @@
 * {
   box-sizing: border-box;
 }
-
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather';
+}
+p, div {
+    font-family: 'Merriweather';
+}
 body html {
   margin: 0;
   display: inline-block;
   position: relative;
 }
+
+
+
+
+
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
 display: block;
 height: auto;
@@ -60,8 +70,9 @@ max-width: 100%;
  position: absolute;
  background-repeat: no-repeat;
  left: 36px;
- height: 90px;
- width: 200px;
+ height: 10vh;
+ width: 15vw;
+ cursor: pointer;
  /*z-index: 900px;*/
 }
 
@@ -69,15 +80,27 @@ max-width: 100%;
    background-color: transparent;
    border-color: transparent;
 }
-// .fa.fa-fw.fa-1x.fa-user{
-//   color: white;
-// }
+.navbar-brand>img{
+  filter: brightness(0) invert(1);
+  margin-left: 36px;
+  margin-top: 10px;
+}
 .nav.navbar-nav.navbar-right li {
     color: white;
+    margin-top: 5vh;
+    font-size: 18px;
+    cursor: pointer;
 }
-.navbar-nav > li{
+div.dropbtn {
+  font-size: 18px;
+}
+div.dropdown-content {
+  width: 250px;
+}
+.navbar-nav > li {
   margin-right: 40px;
 }
+
 .navbar li { color: #000 }
  #button {
   background: Transparent;

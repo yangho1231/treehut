@@ -69,7 +69,7 @@ app.get('/auth/google/callback', passport.authenticate('google', { failureRedire
 app.get('/me', function(req, res) {
   res.send(req.user);
 });
-app.get('/api/product', controller.GetAll);
+app.get('/api/product/page/:id', controller.GetAll);
 app.get('/api/product/four', controller.GetFour);
 app.get('/api/product/stain', controller.GetFourStainless);
 app.get('/api/product/sunglass', controller.GetFourSunGlasses);
@@ -78,6 +78,14 @@ app.post('/api/user', controller.PutUser);
 app.get('/api/user', controller.GetUser);
 app.post('/api/login', controller.login);
 app.post('/api/product/', controller.pageNum);
+app.post('/api/order', controller.placeOrder);
+app.get('/api/cart/:id', controller.getCart);
+app.get('/api/cartinfo', controller.getCartTotal);
+app.post('/api/cart', controller.addToCart);
+app.put('/api/updateCart', controller.updateCart);
+app.get('/api/product/sunglasses', controller.GetSunglasses);
+app.post('/api/remove-product', controller.deleteProduct);
+
 
 app.listen(3000, function() {
   console.log("listening");

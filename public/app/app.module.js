@@ -35,7 +35,7 @@ angular.module('myApp',['ui.router'])
         if (!$stateParams.user && localStorage.getItem("user")) {
             $scope.user = JSON.parse(localStorage.getItem("user"));
         } else if (!$stateParams.user) {
-            $scope.user = {username: "Guest"}
+            $scope.user = {username: "Guest"};
         } else {
             $scope.user = $stateParams.user;
             localStorage.setItem("user", JSON.stringify($scope.user));
@@ -45,8 +45,14 @@ angular.module('myApp',['ui.router'])
     })
     .state('cart', {
       url: '/cart',
-      templateUrl: './assets/views/cart.html'
+      templateUrl: './assets/views/cart.html',
+      controller: 'cartCtrl'
 
+    })
+    .state('sunglasses', {
+      url: '/sunglasses',
+      templateUrl: './assets/views/sunglasses.html',
+      controller: 'sunglassesCtrl'
     });
     $urlRouterProvider
     .otherwise('/');

@@ -1,4 +1,3 @@
-SELECT * FROM products P
-INNER JOIN image i
-ON i.img_id = p.product_id
-LIMIT 50;
+select * from products
+limit 5
+offset $1;

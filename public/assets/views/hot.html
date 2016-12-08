@@ -1,4 +1,4 @@
-<div class = 'main-menu'>
+<!-- <div class = 'main-menu'>
   <div ui-sref = 'home' class = 'logo-menu'>
 
   </div>
@@ -14,15 +14,16 @@
 
     </li>
   </ul>
-</div>
+</div> -->
+<menu-directive></menu-directive>
 
 
-<div class = 'main-menu-wrapper'>
-  <div>
+<div id = 'top-page' class = 'main-menu-wrapper'>
+  <!-- <div>
     <button ng-click='prev()' ng-disabled = 'currentPage === 1'>Previous</button>
     <span>Page {{currentPage}}</span>
     <button ng-click='next()' ng-disabled = 'currentPage === maxPages'>Next</button>
-  </div>
+  </div> -->
 <div class = 'main-menu-left'>
   <hr>
     <h3>Main Menu</h3>
@@ -36,10 +37,20 @@
   </ul>
 </div>
 <div class = 'product-content'>
-  <div class = 'product-wrapper' ng-repeat = "data in datas">
-    <div>{{data.product_name}}</div>
+  <div class = 'col-md-4' class = 'product-wrapper' ng-repeat = "data in datas">
+    <div class = 'product-size'ng-click = 'getIndividual($index)' ui-sref = 'info({id: data.product_id})'>
+
     <img class = 'img-display' ng-src = "{{data.img1}}"></img>
+    <div>{{data.product_name}}</div>
+    <div>{{data.product_price}}</div>
   </div>
+
 
 </div>
 </div>
+</div>
+<section class = 'footer'>
+<div ng-repeat = 'page in pages' class = 'pagination'>
+  <button ng-click='getData(page.pageNum); scrollTo("top-page")'>{{page.text}}</button>
+</div>
+</section>

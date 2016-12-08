@@ -5,6 +5,7 @@ body html {
   margin: 0;
   display: inline-block;
   position: relative;
+  font-family: 'Merriweather', serif;
 }
 .main-menu {
   border-bottom: 1px solid black;
@@ -12,17 +13,22 @@ body html {
   position: fixed;
   height: 17vh;
   background-color: white;
-
+  z-index: 900;
+  display: flex;
+  justify-content: flex-end;
 }
+
 .logo-menu {
   background-image: url('https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/logo.png?15545387235156860073');
-  position: absolute;
+  // position: absolute;
   background-repeat: no-repeat;
   left: 36px;
   height: 90px;
   width: 200px;
+  margin-right: auto;
   /*z-index: 900px;*/
  }
+
 // .li-menu {
 //   color: black;
 // }
@@ -31,12 +37,13 @@ body html {
   justify-content: flex-end;
   list-style-type: none;
 }
-.li-menu {
+#li-menu {
   color: black;
   margin-right: 40px;
-  margin-top: 10px;
+  margin-top: 5vh;
   font-size: 19px;
   position: relative;
+
 }
 
 hr {
@@ -64,12 +71,25 @@ li {
   // justify-content: space-between;
   // align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
-div.product-wrapper {
+// div.product-wrapper {
+//   height: 300px;
+//   width: 230px;
+// }
+.product-size {
+  width: 250px;
   height: 300px;
-  width: 230px;
 }
 img.img-display {
   height: 200px;
   width: 200px;
+}
+.pagination {
+  display: flex;
+}
+.footer {
+  display: flex;
+  justify-content: center;
 }

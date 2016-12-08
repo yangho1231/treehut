@@ -56,29 +56,32 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class = 'navbar-brand' href='#'>
+        <img alt = "Brand" src = "https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/logo.png?15545387235156860073">
+      </a>
     </div>
     <div class = "collapse navbar-collapse" id = "togglemenu">
 
       <ul class = "nav navbar-nav navbar-right">
-        <div ui-sref = 'home' class = 'logo'>
-
-        </div>
+        <!-- <div ui-sref = 'home' class = 'logo'></div> -->
         <li ui-sref = "hot">HOT</li>
-        <li class = 'dropdown'>
-          <a ui-sref = "#aboutme"class = 'dropbtn'>WATCHES
+        <li class = 'dropdown' ui-sref = ''>
+          <div class = 'dropbtn'>WATCHES</div>
             <div class = 'dropdown-content'>
-              <a href = '#'>Linkdddddddddddddddddddddd</a>
-              <a href = '#'>Link</a>
-              <a href = '#'>Link</a>
+              <a href = '#'>1.7 INCHES (DIAMETER)</a>
+              <a href = '#'>1.3 INCHES (DIAMETER)</a>
+              <a href = '#'>CANVAS WATCHES</a>
+              <a href = '#'>COUPLES WATCHES</a>
             </div>
-          </a>
-
         </li>
-        <li><a ui-sref = "#projects">SUNGLASSES
-
-        </a>
+        <li class = 'dropdown' ui-sref = 'sunglasses'>
+          <div class = 'dropbtn'>SUNGLASSES</div>
+            <div class = 'dropdown-content'>
+              <a href = '#'>FOR HIM</a>
+              <a href = '#'>FOR HER</a>
+            </div>
         </li>
-        <li ui-href = "#contacts">SALE</li>
+
         <li ui-sref = "#contacts">OUR STORY</li>
         <li ui-sref = "login"><i class="fa fa-fw fa-1x fa-user" aria-hidden="true"></i></li>
         <li ui-sref = "cart">CART</li>
@@ -144,7 +147,7 @@
 
   <h2>HOT TREE HUT ITEMS</h2>
   <div class = 'product-info'>
-    <div ng-repeat = 'data in fours'>
+    <div class = 'col-md-3' ng-repeat = 'data in fours'>
       <div class = 'widthset'>
       <div class = 'display'>
         <img class = 'img-home' ng-src = '{{data.img1}}'></img>
@@ -153,7 +156,7 @@
       <div>from ${{data.product_price}}.00 USD</div>
       </div>
     </div>
-    <div ng-repeat = 'data in sunglasses'>
+    <div class = 'col-md-3' ng-repeat = 'data in sunglasses'>
       <div class = 'widthset'>
       <div class = 'display'>
         <img class = 'img-home' ng-src = '{{data.img1}}'></img>
@@ -162,7 +165,7 @@
       <div>from ${{data.product_price}}.00 USD</div>
       </div>
     </div>
-    <div ng-repeat = 'data in stains'>
+    <div class = 'col-md-4' ng-repeat = 'data in stains'>
       <div class = 'widthset'>
       <div class = 'display' ng-click='getIndividual($index)' ui-sref = 'info({id: data.product_id})'>
 

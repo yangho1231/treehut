@@ -1,3 +1,22 @@
+/*
+Query for order total:
+
+select o.order_id, sum(p.product_price * oi.quantity)as order_total
+from orders o
+join order_item oi on oi.order_id = o.order_id
+join products p on oi.product_id = p.product_id
+where o.order_id = 9
+group by o.order_id;
+
+Query for order_items:
+
+select o.order_id, oi.product_id, oi.quantity, p.product_name, p.product_price, p.product_price * oi.quantity as subtotal
+from orders o
+join order_item oi on oi.order_id = o.order_id
+join products p on oi.product_id = p.product_id
+where o.order_id = 9;
+*/
+
 CREATE TABLE image (
 img_id INT references products(product_id),
 img1 TEXT,

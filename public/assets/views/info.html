@@ -2,12 +2,73 @@
 
 
 
-<div>{{data.product_name}}</div>
-<div class = 'mainImg'><img ng-src="{{mainImg}}" alt=""></div>
-<ol class = 'info-img'>
-<li><img class = 'info-img' ng-src = '{{data.img1}}' ng-click="changeImage(data.img1)"></img></li>
-<li><img class = 'info-img' ng-src = '{{data.img2}}'></img></li>
-<li><img class = 'info-img' ng-src = '{{data.img3}}'></img><li>
-<li><img class = 'info-img' ng-src = '{{data.img4}}'></img></li>
-</li><img class = 'info-img' ng-src = '{{data.img5}}'></img></li>
-</ol>
+
+<main class = 'info-wrapper'>
+
+  <section class = 'img-display'>
+    <div>
+      <li><img class = 'main-img' ng-src="{{mainImg}}" alt=""></img></li>
+    </div>
+    <div class = 'img-lists'>
+    <ul class = 'ul-info-img'>
+        <li><img class = 'info-img' ng-src = '{{data.img1}}' ng-click="changeImage(data.img1)"></img></li>
+        <li><img class = 'info-img' ng-src = '{{data.img2}}'
+          ng-click = 'changeImage(data.img2)'></img></li>
+        <li><img class = 'info-img' ng-src = '{{data.img3}}'
+          ng-click='changeImage(data.img3)'></img></li>
+        <li><img class = 'info-img' ng-src = '{{data.img4}}'
+          ng-click = 'changeImage(data.img4)'
+        ></img></li>
+        <li><img class = 'info-img' ng-src = '{{data.img5}}'
+          ng-click='changeImage(data.img5)'
+        ></img></li>
+      </ul>
+    </div>
+  </section>
+
+<section class = 'addToCart'>
+  <div><h2>{{data.product_name}}</h2></div>
+  <div><h3>{{data.product_price}}</h3></div>
+  <div>Engraving Options</div>
+  <select class = 'section-option'>
+    <option class = 'section-option'>Watch Alone - No Personlized Engraving on The Back</option>
+    <option class = 'section-option'>Watch + Personalized Engraving on the back</option>
+  </select>
+  <div>Stitching Color</div>
+  <select>
+    <option>Brown Stitching</option>
+    <option>Red Stitching</option>
+  </select>
+  <!-- <label for="quantity">Select Quantity</label> -->
+  <!-- <input name="quantity" ng-model="quantity" type="number" min="1"> -->
+  <div class = 'add-to-cart' ng-click="addToCart(data.product_id, quantity)" ui-sref = 'cart'>ADD TO CART</div>
+  <button ui-sref="hot">Return to Shopping</button>
+
+<div class = 'tabbed-area'>
+  <ul class = 'tabs group'>
+    <li ng-show = 'boxOne = true' ng-style = ''ng-click="boxOne = true; boxTwo = false; boxThree = false" >Product Features<li>
+    <li ng-click="boxOne = false; boxTwo = true; boxThree = false">Shipping & Returns<li>
+    <li ng-click="boxOne = false; boxTwo = false; boxThree = true">Engraving Services<li>
+  </ul>
+  <div class="box-wrap">
+
+    <div id="box-one" ng-show="boxOne">
+      <p>{{data.product_desc}}<p>
+      <p>{{data.product_ul}}</p>
+    </div>
+
+    <div id="box-two" ng-show="boxTwo">
+      <p>Next Business Day Shipping when choosing rush engraving express shipping method. Tracking information will be provided upon shipping.</p>
+      <p>All Tree Hut products are eligible for return and exchanges 15 days upon receiving the products.</p>
+      <p>Please note: Personalized engraving will make the watch non-refundable.</p>
+      <p>Product Warranty: We warrants and guarantees all merchandise against defects in materials and workmanship for a period of 30 days from the date of original purchase and we will issue and exchange for a new product.</p>
+    </div>
+
+    <div id="box-three" ng-show="boxThree">
+      <p>Please note: Personalized engraving will make the watch non-refundable.</p>
+
+      <p>Engraving will be done on the back of the watch. Please limit the engraving to 10 words and leave us a note on the engraving text at the note section when checking out. That simple!</p>
+    </div>
+</div>
+</section>
+</main>

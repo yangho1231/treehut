@@ -1,9 +1,91 @@
 angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.customer = {};
-  this.getData = function() {
+  this.cart = [];
+
+  // this.total = {
+  //   total: this.cart[0].product.product_price * this.cart[0].quantity
+  // };
+  this.getCart = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/product'
+      url: '/api/cart/' + this.customer.user_id
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.getCartTotal = function(orderId) {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/cartinfo',
+      data: {
+        order_id: orderId
+      }
+    });
+  };
+  this.addItemToCart = function(product, quantity, userId) {
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/api/cart',
+      data: {
+        product: product,
+        quantity: quantity,
+        userId: userId
+      }
+    });
+  };
+  this.getItemInfo = function() {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/cart'
+    }).then(function(res) {
+      console.log(res);
+      return res;
+    });
+  };
+
+  this.changeQuantity = function(orderId, productId, quantity) {
+    return $http({
+      method: 'PUT',
+      url: '/api/updateCart',
+      data: {
+        userId: this.customer.user_id,
+        orderId: orderId,
+        productId: productId,
+        quantity: quantity
+      }
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.placeOrder = function() {
+
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/api/order',
+      data: {
+        user_id: this.customer.user_id,
+        cart: this.cart
+      }
+    }).then(function(res) {
+      console.log(res);
+      return res;
+    });
+  };
+  this.removeItemFromCart = function(productId, userId) {
+    console.log("productId", productId);
+    return $http.post('/api/remove-product', {productId: productId, userId: userId});
+    // return $http({
+    //   method: 'DELETE',
+    //   url: '/api/removeProduct',
+    //   data: {
+    //     productId: productId
+    //   }
+    // });
+  };
+  this.getData = function(pageNum) {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/product/page/' + pageNum
     }).then(function(res) {
       console.log(res);
       return res;
@@ -65,4 +147,19 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
       return res;
     });
   };
+  this.getSunglasses = function() {
+    return $http.get('/api/product/sunglasses').then(function(res) {
+      console.log (res);
+    });
+    // return $http.get('/api/product/sunglasses').then(function(res) {
+    //   return res;
+    // });
+  };
+  // this.getData = function(pageNum) {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '',
+  //     data: {}
+  //   });
+  // };
 });
