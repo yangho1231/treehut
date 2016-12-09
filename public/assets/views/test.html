@@ -18,16 +18,16 @@
   <ul id = 'navbar-menu' class = "nav navbar-nav navbar-right">
     <!-- <div ui-sref = 'home' class = 'logo'></div> -->
     <li ui-sref = "hot">HOT</li>
-    <li class = 'dropdown' ui-sref = ''>
+    <li class = 'dropdown' ui-sref = 'watches'>
       <div class = 'dropbtn'>WATCHES</div>
         <div class = 'dropdown-content'>
-          <a href = '#'>1.7 INCHES (DIAMETER)</a>
+          <a ui-sref = '17' ng-click="$event.stopPropagation()">1.7 INCHES (DIAMETER)</a>
           <a href = '#'>1.3 INCHES (DIAMETER)</a>
           <a href = '#'>CANVAS WATCHES</a>
           <a href = '#'>COUPLES WATCHES</a>
         </div>
     </li>
-    <li class = 'dropdown' ui-sref = '#'>
+    <li class = 'dropdown' ui-sref = 'sunglasses'>
       <div class = 'dropbtn'>SUNGLASSES</div>
         <div class = 'dropdown-content'>
           <a href = '#'>FOR HIM</a>

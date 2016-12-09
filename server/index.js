@@ -73,6 +73,9 @@ app.get('/api/product/page/:id', controller.GetAll);
 app.get('/api/product/four', controller.GetFour);
 app.get('/api/product/stain', controller.GetFourStainless);
 app.get('/api/product/sunglass', controller.GetFourSunGlasses);
+app.get('/api/product/watches', controller.GetWatches);
+app.get('/api/product/watches/1.7-inches', controller.GetWatches17);
+app.get('/api/product/sunglasses', controller.GetSunglasses);
 app.get('/api/product/:productId', controller.GetOne);
 app.post('/api/user', controller.PutUser);
 app.get('/api/user', controller.GetUser);
@@ -83,7 +86,9 @@ app.get('/api/cart/:id', controller.getCart);
 app.get('/api/cartinfo', controller.getCartTotal);
 app.post('/api/cart', controller.addToCart);
 app.put('/api/updateCart', controller.updateCart);
-app.get('/api/product/sunglasses', controller.GetSunglasses);
+app.get('/api/orders/:id', controller.getOrder);
+app.get('/api/orderTotal/:id', controller.getOrderTotal)
+
 app.post('/api/remove-product', controller.deleteProduct);
 
 

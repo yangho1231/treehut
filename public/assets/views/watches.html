@@ -18,12 +18,12 @@
   </ul>
 </div>
 <div class = 'product-content'>
-  <div class = 'col-md-4' class = 'product-wrapper' ng-repeat = "data in sunglasses">
-    <div class = 'product-size'ng-click = 'getIndividual($index)' ui-sref = 'info({id: data.product_id})'>
+  <div class = 'col-md-4' class = 'product-wrapper' ng-repeat = "watch in watches">
+    <div class = 'product-size'ng-click = 'getIndividual($index)' ui-sref = 'info({id: watch.product_id})'>
 
-    <img class = 'img-display' ng-src = "{{data.img1}}"></img>
-    <div>{{data.product_name}}</div>
-    <div>{{data.product_price}}</div>
+    <img class = 'img-display' ng-src = "{{watch.img1}}"></img>
+    <div>{{watch.product_name}}</div>
+    <div>{{watch.product_price}}</div>
   </div>
 
 

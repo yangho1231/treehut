@@ -31,17 +31,7 @@ angular.module('myApp',['ui.router'])
       url: '/account/:id',
       templateUrl: './assets/views/myPage.html',
       params: {user: null},
-      controller: function($scope, $stateParams) {
-        if (!$stateParams.user && localStorage.getItem("user")) {
-            $scope.user = JSON.parse(localStorage.getItem("user"));
-        } else if (!$stateParams.user) {
-            $scope.user = {username: "Guest"};
-        } else {
-            $scope.user = $stateParams.user;
-            localStorage.setItem("user", JSON.stringify($scope.user));
-        }
-      }
-
+      controller: 'orderCtrl'
     })
     .state('cart', {
       url: '/cart',
@@ -53,6 +43,16 @@ angular.module('myApp',['ui.router'])
       url: '/sunglasses',
       templateUrl: './assets/views/sunglasses.html',
       controller: 'sunglassesCtrl'
+    })
+    .state('watches', {
+      url: '/watches',
+      templateUrl: './assets/views/watches.html',
+      controller: 'watchesCtrl'
+    })
+    .state('17', {
+      url: '/watches/17',
+      templateUrl: './assets/views/1.7.html',
+      controller: '1.7Ctrl'
     });
     $urlRouterProvider
     .otherwise('/');

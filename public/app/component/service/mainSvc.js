@@ -5,6 +5,28 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   // this.total = {
   //   total: this.cart[0].product.product_price * this.cart[0].quantity
   // };
+  // this.getSunglasses = function() {
+  //   return $http.get('/api/product/sunglasses').then(function(res) {
+  //     console.log (res);
+  //   });
+    // retur
+  this.getWatches = function() {
+    return $http.get('/api/product/watches').then(function(res) {
+      // console.log(res);
+      return res.data;
+    });
+  };
+  this.get17 = function() {
+    return $http.get('/api/product/watches/1.7-inches').then(function(res) {
+      // console.log(res);
+      return res.data;
+    });
+  };
+  this.getSunglasses = function() {
+    return $http.get('/api/product/sunglasses').then(function(res) {
+      return res.data;
+    });
+  };
   this.getCart = function() {
     return $http({
       method: 'GET',
@@ -64,7 +86,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
       url: 'http://localhost:3000/api/order',
       data: {
         user_id: this.customer.user_id,
-        cart: this.cart
+
       }
     }).then(function(res) {
       console.log(res);
@@ -147,19 +169,22 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
       return res;
     });
   };
-  this.getSunglasses = function() {
-    return $http.get('/api/product/sunglasses').then(function(res) {
-      console.log (res);
+  this.getOrders = function() {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/orders/' + this.customer.user_id
     });
+  };
+
+  this.getOrderTotal = function(id) {
+    return $http({
+      method: 'GET',
+      url: '/api/orderTotal/' + id
+    });
+  };
     // return $http.get('/api/product/sunglasses').then(function(res) {
     //   return res;
     // });
-  };
-  // this.getData = function(pageNum) {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '',
-  //     data: {}
-  //   });
-  // };
+
+
 });

@@ -6,9 +6,28 @@ module.exports = {
     db.get_all(offset, function(err, all) {
       if(err) return res.status(500).send(err);
       db.getCount(function(err, count){
-        if(err) return next(err)
-        res.send({all: all, count: count})
-      })
+        if(err) return next(err);
+        res.send({all: all, count: count});
+      });
+    });
+  },
+  GetWatches: function(req, res, next) {
+    db.get_watches(function(err, watches) {
+      if(err) return res.status(500).send(err);
+      else return res.send(watches);
+    });
+  },
+  GetWatches17: function(req, res, next) {
+    db.get_watches_17(function(err, watches) {
+      if(err) return res.status(500).send(err);
+      else return res.send(watches);
+    });
+  },
+  GetSunglasses: function(req, res, next) {
+
+    db.get_sunglasses(function(err, getAll) {
+      if(err) return res.status(500).send(err);
+      else return res.send(getAll);
     });
   },
   GetFour: function(req, res, next) {
@@ -99,23 +118,23 @@ module.exports = {
     });
   },
   placeOrder: function(req, res, next) {
-    // console.log(req.body.user_id, req.body.cart);
-    db.orders.insert({user_id: req.body.user_id, ordered_data: new Date()}, function(err, order) {
-      if(err) {
-        res.status(500).send(err);
-      }
-      else {
-        for (var i = 0; i < req.body.cart.length; i++) {
-          db.order_item.insert({order_id: order.order_id, product_id: req.body.cart[i].product.product_id, quantity: req.body.cart[i].quantity}, function(err, order_item) {
-            if (err) {
-            }
-            else {
-              console.log(order_item);
-            }
-          });
-        }
-        res.send(order);
-      }
+    db.orders.update({user_id: req.body.user_id}, {checked_out: true}, function(err, order) {
+      if (err) return res.status(500).json(err);
+      return res.status(201).json(order);
+    });
+  },
+  getOrder: function(req, res, next) {
+    db.get_orders([req.params.id], function(err, orders) {
+      if (err) return res.status(500).json(err);
+      return res.status(200).json(orders);
+    });
+  },
+  getOrderTotal: function(req, res, next) {
+    console.log(req.params.id)
+    db.get_order_total([req.params.id], function(err, orderTotal) {
+      console.log(orderTotal);
+      if (err) return res.status(500).json(err);
+      return res.status(200).json(orderTotal);
     });
   },
   totalPrice: function(req,res,next) {
@@ -165,17 +184,6 @@ module.exports = {
           });
     });
   },
-  GetSunglasses: function(req, res, next) {
-    console.log("sunglasses");
-    db.get_sunglasses(function(err, getAll) {
-      if(err) {
-        return next(err);
-      }
-      else {
-        res.send(getAll);
-      }
-    });
-  },
   addToCart: function(req, res, next) {
     // res.send(req.body);
     db.get_order(req.body.userId, function(err, order) {
@@ -221,7 +229,7 @@ module.exports = {
         });
       }
     });
-  },
+  }
 
 
 };

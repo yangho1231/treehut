@@ -13,6 +13,7 @@ angular.module('myApp').controller('infoCtrl', function($scope, mainSvc, $stateP
       $scope.mainImg = imgUrl;
   };
   $scope.addToCart = function(productId, quantity) {
+    console.log(productId, quantity);
     mainSvc.addItemToCart(productId, quantity, mainSvc.customer.user_id).then(function(res) {
     });
   };
