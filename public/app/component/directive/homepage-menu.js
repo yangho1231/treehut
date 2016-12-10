@@ -19,6 +19,7 @@ angular.module('myApp').directive('homeMenu', function() {
         $('#navbar-right li').css({"color": "white"});
         }
       });
+
 }
 };
 });

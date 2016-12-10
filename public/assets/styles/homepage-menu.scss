@@ -4,12 +4,12 @@
   width: 100vw;
   z-index: 900;
 }
-li:after {
+#navbar-right li:after {
   content: "";
   position: absolute;
   width: 100%;
   height: 5px;
-  margin-top: 10px;
+  margin-top: 50px;
   bottom: 0;
   left: 0;
   background-color: #BF4B5A;
@@ -19,7 +19,7 @@ li:after {
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
-li:hover:after {
+#navbar-right li:hover:after {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
