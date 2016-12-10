@@ -1,4 +1,4 @@
-angular.module('myApp').controller('hotCtrl', function($scope, mainSvc, $anchorScroll) {
+angular.module('myApp').controller('hotCtrl', function($scope, mainSvc, $anchorScroll, $timeout, $location) {
   $scope.currentPage = 1;
   $scope.maxPages = 2;
  function paginator(count) {
@@ -26,8 +26,10 @@ angular.module('myApp').controller('hotCtrl', function($scope, mainSvc, $anchorS
       });
   };
   $scope.scrollTo = function(id) {
+    $timeout(function(){
     $location.hash(id);
     $anchorScroll();
+  }, 0);
   };
 
   // $scope.prev = function() {

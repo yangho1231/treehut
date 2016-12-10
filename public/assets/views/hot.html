@@ -42,7 +42,7 @@
 
     <img class = 'img-display' ng-src = "{{data.img1}}"></img>
     <div>{{data.product_name}}</div>
-    <div>{{data.product_price}}</div>
+    <div class = 'price'>{{data.product_price | currency}}</div>
   </div>
 
 
@@ -54,3 +54,4 @@
   <button ng-click='getData(page.pageNum); scrollTo("top-page")'>{{page.text}}</button>
 </div>
 </section>
+<bottom-menu></bottom-menu>

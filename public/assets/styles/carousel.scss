@@ -13,10 +13,6 @@ body html {
   position: relative;
 }
 
-
-
-
-
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
 display: block;
 height: auto;
@@ -24,12 +20,8 @@ width: 100%;
 max-width: 100%;
 
 }
-
-
 .carousel-caption {
   top: 20%;
-
-
 }
 .carousel-indicators li, .carousel-indicators li.active {
   border-radius: 1px;
@@ -46,12 +38,7 @@ max-width: 100%;
 .carousel-h2 {
   font-size: 2.3vw;
 }
-.main-text {
-  position: fixed;
-  top: 20px;
-  width: 100vw;
-  z-index: 900;
-}
+
 // ul {
 //   display: flex;
 //   justify-content: flex-end;
@@ -64,17 +51,17 @@ max-width: 100%;
 //   font-size: 19px;
 //   position: relative;
 // }
-.logo {
- background-image: url('https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/logo.png?15545387235156860073');
- filter: brightness(0) invert(1);
- position: absolute;
- background-repeat: no-repeat;
- left: 36px;
- height: 10vh;
- width: 15vw;
- cursor: pointer;
- /*z-index: 900px;*/
-}
+// .logo {
+//  background-image: url('https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/logo.png?15545387235156860073');
+//  filter: brightness(0) invert(1);
+//  position: absolute;
+//  background-repeat: no-repeat;
+//  left: 36px;
+//  height: 10vh;
+//  width: 15vw;
+//  cursor: pointer;
+//  /*z-index: 900px;*/
+// }
 
 .navbar {
    background-color: transparent;
@@ -212,6 +199,9 @@ div.dropdown-content {
 }
 .invalid {
   border: 1px solid red;
+}
+.price {
+  color: #AF1F3D;
 }
 /* Change the background color of the dropdown button when the dropdown content is shown */
 // .dropdown:hover .dropbtn {

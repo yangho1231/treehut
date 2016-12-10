@@ -44,13 +44,14 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
       }
     });
   };
-  this.addItemToCart = function(product, quantity, userId) {
+  this.addItemToCart = function(product, quantity, price, userId) {
     return $http({
       method: 'POST',
       url: 'http://localhost:3000/api/cart',
       data: {
         product: product,
         quantity: quantity,
+        price: price,
         userId: userId
       }
     });

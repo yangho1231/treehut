@@ -2,6 +2,7 @@ angular.module('myApp').controller('infoCtrl', function($scope, mainSvc, $stateP
 
   $scope.getIndividual = function(id) {
     mainSvc.getIndividual(id).then(function(res) {
+      console.log("getIndividual", res);
       $scope.data = res;
       $scope.changeImage($scope.data.img1);
     });
@@ -12,9 +13,11 @@ angular.module('myApp').controller('infoCtrl', function($scope, mainSvc, $stateP
     console.log(imgUrl);
       $scope.mainImg = imgUrl;
   };
-  $scope.addToCart = function(productId, quantity) {
+  $scope.addToCart = function(productId, quantity, price) {
     console.log(productId, quantity);
-    mainSvc.addItemToCart(productId, quantity, mainSvc.customer.user_id).then(function(res) {
+    mainSvc.addItemToCart(productId, quantity, price, mainSvc.customer.user_id).then(function(res) {
     });
   };
+
+
 });

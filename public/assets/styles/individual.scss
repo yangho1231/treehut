@@ -49,6 +49,9 @@ body html {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+li {
+  list-style-type: none;
+}
 select {
   border-radius: 5px;
   height: 7vh;
@@ -86,7 +89,7 @@ img.main-img {
 .tabs li:active { color: red; }
 .tabs li:visited { color: red; border-top: 1px solid black; }
 .group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
-.box-wrap { position: relative; min-height: 250px; }
+.box-wrap { position: relative; min-height: 350px; }
 .tabbed-area div div { background: white; padding: 20px; min-height: 250px; position: absolute; top: -1px; left: 0; width: 100%; }
 .tabs {border-bottom: 1px solid black }
 #box-one:target, #box-two:target, #box-three:target {

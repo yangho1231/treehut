@@ -1,5 +1,6 @@
 angular.module('myApp').controller('cartCtrl', function($scope, mainSvc) {
   mainSvc.getCart().then(function(response) {
+    console.log(response);
     $scope.cart = response.data;
   });
   // $scope.cart = mainSvc.cart;

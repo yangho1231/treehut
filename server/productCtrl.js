@@ -190,8 +190,9 @@ module.exports = {
       if(err) return next(err);
 
       if(order[0] && !order[0].checked_out) {
-        console.log(order);
-        db.add_cart([order[0].order_id, req.body.product, req.body.quantity], function(err, data) {
+
+
+        db.add_cart([order[0].order_id, req.body.product, req.body.quantity, req.body.price], function(err, data) {
           if(err) return next(err);
           db.get_cart(order[0].order_id, function(err, cart) {
             if(err) return next(err);
