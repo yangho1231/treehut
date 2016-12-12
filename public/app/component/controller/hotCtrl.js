@@ -6,7 +6,7 @@ angular.module('myApp').controller('hotCtrl', function($scope, mainSvc, $anchorS
    var pageCount = Math.floor(count/21);
    for(var i = 1; i <= pageCount; i++) {
      pagination.push({
-       text: "page " + i,
+       text: i,
        pageNum : i
      });
    }

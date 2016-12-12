@@ -66,6 +66,10 @@ li {
   // display: inline-block;
   vertical-align: top;
 }
+.main-menu-left ul li {
+  margin-top: 10px;
+
+}
 .product-content {
   display: flex;;
   // justify-content: space-between;
@@ -88,6 +92,14 @@ img.img-display {
 }
 .pagination {
   display: flex;
+}
+.pagination button{
+  border: none;
+  margin-right: 15px;
+  border-radius: 5px;
+  height: 30;
+  width: 30;
+  color: red;
 }
 .footer {
   display: flex;

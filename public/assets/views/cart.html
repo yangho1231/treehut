@@ -1,21 +1,29 @@
 <menu-directive></menu-directive>
 <div class = 'header'>
-  <h1>CART</h1>
-  <h2>PRODUCTS</h2>
-  <div ng-repeat="product in cart">
-    <img class = 'cart-img' ng-src={{product.img1}} alt=""ng-model = 'totalPrice'>
-    <h3>Name: {{product.product_name}}</h3>
-    <h3>Quantity:{{product.quantity}}</h3>
-    <h3>Price: {{product.total_price | currency}}</h3>
+  <hr><h1>CART</h1></hr>
+  <hr></hr>
+  <hr><h2>PRODUCTS</h2></hr>
+  <hr></hr>
+  <div class = 'cart-info' ng-repeat="product in cart">
+    <div>
+      <img class = 'cart-img' ng-src={{product.img1}} alt=""ng-model = 'totalPrice'>
+    </div>
+    <div class = 'item-info-change'>
+      <h3>Name: {{product.product_name}}</h3>
+      <p>Quantity:{{product.quantity}}</p>
+      <p>Price: {{product.total_price | currency}}</p>
+      <div>
+      <label for = 'quantity'>Change Quantity</label>
+      <input ng-model = 'quantity' type = 'number' name='quantity' value = '1'></input>
 
-    <button ng-click="removeItemFromCart(product.product_id)">Remove Item</button>
-    <label for = 'quantity'>Change Quantity</label>
-    <input ng-model = 'quantity' type = 'number' name='quantity' value = '1'></input>
+      <button ng-click = 'changeQuantity(product.product_id, quantity)'>Submit</button>
+      </div>
+      <button ng-click="removeItemFromCart(product.product_id)">Remove</button>
 
-    <button ng-click = 'changeQuantity(product.product_id, quantity)'>Submit</button>
-  </div>
-  <div>Total Price: {{total}}</div>
-  <button ng-click = 'placeOrder()'>Place Order</button>
+    </div>
+</div>
+  <!-- <div><h3>Total Price: {{total}}</h3></div> -->
+  <button id = "checkout"ng-click = 'placeOrder()'>Check Out</button>
 
 
 </div>

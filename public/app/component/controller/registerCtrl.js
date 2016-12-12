@@ -1,4 +1,4 @@
-angular.module('myApp').controller('registerCtrl', function($scope, mainSvc) {
+angular.module('myApp').controller('registerCtrl', function($scope, mainSvc, $state) {
   $scope.formModel = {};
   $scope.onSubmit = function(valid) {
     console.log($scope.formModel);
@@ -14,6 +14,7 @@ angular.module('myApp').controller('registerCtrl', function($scope, mainSvc) {
             $scope.userError = true;
             $("#username").focus();
           }
+          $state.go('login');
       });
     }
     else {

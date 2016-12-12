@@ -1,8 +1,8 @@
 <menu-directive></menu-directive>
 <div class = 'header'>
   <h2>ACCOUNT DETAILS AND ORDER HISTORY</h2>
-  <div>Logged in as {{user.username}} (logout)</div>
-  <div>{{user.email}}</div>
+  <div>Logged in as:  {{orders[0].username}} (logout)</div>
+  <div>Email: {{orders[0].email}}</div>
   <div ng-repeat="order in orders">
     {{order.product_name}}, {{order.product_price | currency}}, {{order.quantity}}
   </div>

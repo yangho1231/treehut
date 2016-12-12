@@ -1,6 +1,7 @@
 <menu-directive></menu-directive>
+    <div class = 'register-header'>
     <h2>Create Account</h2>
-    <div>
+    <div class = 'register-form'>
     <form ng-submit='onSubmit(theForm.$valid)' name='theForm' novalidate='novalidate'>
         <div>
             <label for="firstname">First name</label>
@@ -21,7 +22,7 @@
           'has-success': theForm.email.$valid && (!theForm.$pristine || theForm.$submitted)
           }
           ">
-            <label for="email">email</label>
+            <label for="email">Email</label>
             <input type="email" name="email" id="email" class="form-control" ng-model = 'formModel.email'
             required = 'required'
           >
@@ -44,10 +45,14 @@
         </div>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary"  type =  'submit'>Register</button>
+            <button type="submit" class="btn btn-primary"  type = 'submit'>
+              SIGN UP
+            </button>
+            <p>Returng Customer? <a ui-sref = 'login'> Sign In --></a></p>
 
         </div>
     </form>
     <!-- <pre>{{formModel | json}}</pre>
     <pre>{{theForm | json}}</pre> -->
+</div>
 </div>

@@ -5,18 +5,7 @@
     <span>Page {{currentPage}}</span>
     <button ng-click='next()' ng-disabled = 'currentPage === maxPages'>Next</button>
   </div> -->
-<div class = 'main-menu-left'>
-  <hr>
-    <h3>Main Menu</h3>
-  </hr>
-  <hr>
-  </hr>
-  <ul>
-    <li>HOT</li>
-    <li>WATCHES</li>
-    <li>SUNGLASSES</li>
-  </ul>
-</div>
+<menu-left></menu-left>
 <div class = 'product-content'>
   <div class = 'col-md-4' class = 'product-wrapper' ng-repeat = "data in sunglasses">
     <div class = 'product-size'ng-click = 'getIndividual($index)' ui-sref = 'info({id: data.product_id})'>

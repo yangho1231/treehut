@@ -1,4 +1,24 @@
 img.cart-img {
-  height: 400px;
-
+  height: 240px;
+  width: 240px;
+}
+.cart-info {
+  display: flex;
+  justify-content: space-around;
+}
+.cart-info div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.item-info-change {
+  width: 50vw;
+}
+.item-info-change input {
+  width: 30px;
+}
+button#checkout{
+  height: 50px;
+  width: 150px;
+  color: white;
+  background-color: #AF1F31;
 }
