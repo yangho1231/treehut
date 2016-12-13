@@ -10,15 +10,16 @@ angular.module('myApp').controller('registerCtrl', function($scope, mainSvc, $st
           console.log(res);
           if (res.data === "username taken") {
             $scope.formModel.username = "";
-            alert("Username already taken. Please choose another.");
+            swal("Oops", "Username already taken. Please choose another.", "error");
             $scope.userError = true;
             $("#username").focus();
           }
+
           $state.go('login');
       });
     }
     else {
-      alert("No Way!!");
+      swal("Oops", "No Way!!", "error");
     }
   };
 });

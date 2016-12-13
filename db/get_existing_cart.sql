@@ -1,5 +1,5 @@
-select * from orders o
-join order_item oi
+select * from order_item oi
+join orders o
 on o.order_id = oi.order_id
 join products p
 on oi.product_id = p.product_id

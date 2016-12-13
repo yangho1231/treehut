@@ -26,7 +26,7 @@ angular.module('myApp').controller('cartCtrl', function($scope, mainSvc) {
   $scope.placeOrder = function() {
     mainSvc.placeOrder().then(function(res) {
       $scope.cart = [];
-      alert("Order placed");
+      sweetAlert("Order placed!", "Order has been confirmed", "success");
     });
   };
 

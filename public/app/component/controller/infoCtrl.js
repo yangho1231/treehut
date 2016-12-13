@@ -16,6 +16,7 @@ angular.module('myApp').controller('infoCtrl', function($scope, mainSvc, $stateP
   $scope.addToCart = function(productId, quantity, price) {
     console.log(productId, quantity);
     mainSvc.addItemToCart(productId, quantity, price, mainSvc.customer.user_id).then(function(res) {
+      $state.go('cart');
     });
   };
 

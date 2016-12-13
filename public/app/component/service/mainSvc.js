@@ -28,6 +28,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
     });
   };
   this.getCart = function() {
+    console.log(this.customer);
     return $http({
       method: 'GET',
       url: '/api/cart/' + this.customer.user_id

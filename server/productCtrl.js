@@ -158,7 +158,10 @@ module.exports = {
     });
   },
   getCart: function(req, res, next) {
+    console.log(req.params)
     db.get_existing_cart([req.params.id], function(err, cart) {
+      console.log("Err: ", err);
+      console.log("Cart: ", cart);
       if (err) return res.status(500).json(err);
       else return res.status(200).json(cart);
     });
@@ -212,7 +215,7 @@ module.exports = {
           db.get_order([req.body.userId], function(err, order) {
             if(err) return next(err);
             console.log(order[0].order_id, req.body.product, req.body.quantity);
-            db.add_cart([order[0].order_id, req.body.product, req.body.quantity],
+            db.add_cart([order[0].order_id, req.body.product, req.body.quantity, req.body.price],
             function(err, data) {
               if(err) return next(err);
               db.get_cart(order[0].order_id, function(err, cart) {
