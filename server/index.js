@@ -2,11 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var cors = require('cors');
-var config = require('./../config.js');
+// var config = require('./../config.js');
 var massive = require('massive');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
-var massive = massive.connectSync({connectionString: config.connectionString});
+var massive = massive.connectSync({connectionString: process.env.elephantUrl});
 
 var app = module.exports =express();
 
@@ -17,14 +17,14 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.json());
 app.use(session({
-  secret: config.secret,
+  secret: process.env.secret,
   resave: true,
   saveUninitialized: true
 }));
 
 passport.use(new GoogleStrategy({
-  clientID: config.googleId,
-  clientSecret: config.googleSecret,
+  clientID: process.env.googleId,
+  clientSecret: process.evn.googleSecret,
   callbackURL: 'http://localhost:3000/auth/google/callback'
 }, function(accessToken, refreshToken, profile, done) {
   db.users.findOne({google_id: profile.id}, function(err, dbRes) {
