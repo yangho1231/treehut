@@ -55,7 +55,7 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 var corsOptions = {
-  origin: 'http://localhost:3000'
+  origin: 'https://treehutclone.herokuapp.com'
 };
 app.use(cors(corsOptions));
 app.set('db', massive);
@@ -92,6 +92,6 @@ app.get('/api/orderTotal/:id', controller.getOrderTotal)
 app.post('/api/remove-product', controller.deleteProduct);
 
 
-app.listen(3000, function() {
+app.listen(process.env.PORT, function() {
   console.log("listening");
 });
