@@ -24,7 +24,7 @@ app.use(session({
 
 passport.use(new GoogleStrategy({
   clientID: process.env.googleId,
-  clientSecret: process.evn.googleSecret,
+  clientSecret: process.env.googleSecret,
   callbackURL: 'http://localhost:3000/auth/google/callback'
 }, function(accessToken, refreshToken, profile, done) {
   db.users.findOne({google_id: profile.id}, function(err, dbRes) {
