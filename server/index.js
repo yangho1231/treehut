@@ -9,9 +9,9 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var massive = massive.connectSync({connectionString: process.env.elephantUrl});
 
 var app = module.exports =express();
-app.use(express.static(__dirname + '../public'));
+app.use(express.static(__dirname + '/../public'));
 app.get('/', (req, res) => {
-  res.sendFile('../public/index.html');
+  res.sendFile(__dirname + '/../public/index.html');
 });
 
 //passport
