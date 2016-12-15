@@ -11,7 +11,7 @@ var massive = massive.connectSync({connectionString: process.env.elephantUrl});
 var app = module.exports =express();
 app.use(express.static(__dirname + '../public'));
 app.get('/', (req, res) => {
-  res.render('../public/index.html');
+  res.sendFile('../public/index.html');
 });
 
 //passport
