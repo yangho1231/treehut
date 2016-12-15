@@ -39,7 +39,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.getCartTotal = function(orderId) {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/cartinfo',
+      url: 'https://treehutclone.herokuapp.com/api/cartinfo',
       data: {
         order_id: orderId
       }
@@ -48,7 +48,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.addItemToCart = function(product, quantity, price, userId) {
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/api/cart',
+      url: 'https://treehutclone.herokuapp.com/api/cart',
       data: {
         product: product,
         quantity: quantity,
@@ -60,7 +60,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.getItemInfo = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/cart'
+      url: 'https://treehutclone.herokuapp.com/api/cart'
     }).then(function(res) {
       console.log(res);
       return res;
@@ -85,7 +85,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
 
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/api/order',
+      url: 'https://treehutclone.herokuapp.com/api/order',
       data: {
         user_id: this.customer.user_id,
 
@@ -109,7 +109,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.getData = function(pageNum) {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/product/page/' + pageNum
+      url: 'https://treehutclone.herokuapp.com/api/product/page/' + pageNum
     }).then(function(res) {
       console.log(res);
       return res;
@@ -118,7 +118,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.getDataFour = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/product/four'
+      url: 'https://treehutclone.herokuapp.com/api/product/four'
     }).then(function(res) {
       return res;
     });
@@ -126,7 +126,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.getDataFourStain = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/product/stain'
+      url: 'https://treehutclone.herokuapp.com/api/product/stain'
     }).then(function(res) {
       return res;
     });
@@ -134,7 +134,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.getDataFourSunglass = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/product/sunglass'
+      url: 'https://treehutclone.herokuapp.com/api/product/sunglass'
     }).then(function(res) {
       return res;
     });
@@ -143,7 +143,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
     console.log(id);
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/product/' + id
+      url: 'https://treehutclone.herokuapp.com/api/product/' + id
     }).then(function(res) {
       // console.log(res.data);
       return res.data[0];
@@ -152,21 +152,21 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.postUser = function(user) {
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/api/user',
+      url: 'https://treehutclone.herokuapp.com/api/user',
       data: user
     });
   };
   this.login = function(user) {
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/api/login',
+      url: 'https://treehutclone.herokuapp.com/api/login',
       data: user
     });
   };
   this.changeImage = function(imgId) {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/img'
+      url: 'https://treehutclone.herokuapp.com/api/img'
     }).then(function(res) {
       return res;
     });
@@ -174,7 +174,7 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
   this.getOrders = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/orders/' + this.customer.user_id
+      url: 'https://treehutclone.herokuapp.com/api/orders/' + this.customer.user_id
     });
   };
 
