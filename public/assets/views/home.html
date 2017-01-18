@@ -85,14 +85,14 @@
 
   <!-- <div class = 'ad'></div> -->
 
-  <div class = 'row'>
-    <div class = 'col-sm-4'>
+  <div class = 'three-img'>
+    <div class = 'three-img-wrap'>
       <img class="img-responsive" src = 'https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/feature1.jpg?1310593969644757692'>
     </div>
-    <div class = 'col-sm-4'>
+    <div class = 'three-img-wrap'>
       <img class="img-responsive" src = 'https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/feature3.jpg?1310593969644757692'>
     </div>
-    <div class = 'col-sm-4'>
+    <div class = 'three-img-wrap'>
       <img class="img-responsive" src = 'https://cdn.shopify.com/s/files/1/0667/0685/t/2/assets/feature2.jpg?1310593969644757692'>
     </div>
 
@@ -102,32 +102,39 @@
 
   <h2>HOT TREE HUT ITEMS</h2>
   <div class = 'product-info'>
-    <div class = 'col-md-3' ng-repeat = 'data in fours'>
+
+    <div class = 'product-info-wrap' ng-repeat = 'data in fours'>
+      <div class = 'widthset'>
+
+      <div class = 'display'>
+        <img class = 'img-home img-responsive' ng-src = '{{data.img1}}'></img>
+      </div>
+
+      <div>{{data.product_name}}</div>
+
+      <div class = 'price'>from {{data.product_price | currency}} USD</div>
+
+      </div>
+
+    </div>
+
+    <div class = 'product-info-wrap' ng-repeat = 'data in sunglasses'>
       <div class = 'widthset'>
       <div class = 'display'>
-        <img class = 'img-home' ng-src = '{{data.img1}}'></img>
+        <img class = 'img-home img-responsive' ng-src = '{{data.img1}}'></img>
       </div>
       <div>{{data.product_name}}</div>
-      <div class = 'price'>from ${{data.product_price | currency}} USD</div>
+      <div class = 'price'>from {{data.product_price | currency}} USD</div>
       </div>
     </div>
-    <div class = 'col-md-3' ng-repeat = 'data in sunglasses'>
-      <div class = 'widthset'>
-      <div class = 'display'>
-        <img class = 'img-home' ng-src = '{{data.img1}}'></img>
-      </div>
-      <div>{{data.product_name}}</div>
-      <div class = 'price'>from ${{data.product_price | currency}} USD</div>
-      </div>
-    </div>
-    <div class = 'col-md-4' ng-repeat = 'data in stains'>
+
+    <div class = 'product-info-wrap' ng-repeat = 'data in stains'>
       <div class = 'widthset'>
       <div class = 'display' ng-click='getIndividual($index)' ui-sref = 'info({id: data.product_id})'>
-
-        <img class = 'img-home' ng-src = '{{data.img1}}'></img>
+        <img class = 'img-home img-responsive' ng-src = '{{data.img1}}'></img>
       </div>
       <div>{{data.product_name}}</div>
-      <div class = 'price'>from ${{data.product_price | currency}} USD</div>
+      <div class = 'price'>from {{data.product_price | currency}} USD</div>
       </div>
     </div>
   </div>
