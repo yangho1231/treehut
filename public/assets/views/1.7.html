@@ -1,0 +1,22 @@
+<menu-directive></menu-directive>
+<div id = 'top-page' class = 'main-menu-wrapper'>
+  <!-- <div>
+    <button ng-click='prev()' ng-disabled = 'currentPage === 1'>Previous</button>
+    <span>Page {{currentPage}}</span>
+    <button ng-click='next()' ng-disabled = 'currentPage === maxPages'>Next</button>
+  </div> -->
+  <menu-left></menu-left>
+<div class = 'product-content'>
+  <div class = 'col-md-4' class = 'product-wrapper' ng-repeat = "data in infos">
+    <div class = 'product-size'ng-click = 'getIndividual($index)' ui-sref = 'info({id: data.product_id})'>
+
+    <img class = 'img-display' ng-src = "{{data.img1}}"></img>
+    <div>{{data.product_name}}</div>
+    <div class = 'price'>{{data.product_price | currency}}</div>
+  </div>
+
+
+</div>
+</div>
+</div>
+<bottom-menu></bottom-menu>
