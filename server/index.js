@@ -95,7 +95,6 @@ app.post('/api/cart', controller.addToCart);
 app.put('/api/updateCart', controller.updateCart);
 app.get('/api/orders/:id', controller.getOrder);
 app.get('/api/orderTotal/:id', controller.getOrderTotal)
-
 app.post('/api/remove-product', controller.deleteProduct);
 
 
