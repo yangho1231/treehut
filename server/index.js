@@ -35,7 +35,7 @@ passport.use(new GoogleStrategy({
     // console.log("dbRes", dbRes);
     if(!dbRes) {
       console.log("User not found. Creating...");
-      db.users.insert({name: profile.displayName, type: 'client', google_id: profile.id, photo: profile.photos[0].value}, (err, dbRes) => {
+      db.users.insert({name: profile.displayName, type: 'client', google_id: profile.id, photo: profile.photos[0].value}, function(err, dbRes) {
         // console.log(profile);
         if(err) {
           // console.log(err);
@@ -52,10 +52,10 @@ passport.use(new GoogleStrategy({
     }
   });
 }));
-passport.serializeUser((user, done) => {
+passport.serializeUser(function(user, done) {
   done(null, user);
 });
-passport.deserializeUser((obj, done) => {
+passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
@@ -65,11 +65,11 @@ var corsOptions = {
 };
 app.use(cors(corsOptions));
 app.set('db', massive);
-const db = app.get('db');
-const controller = require('./productCtrl.js');
+var db = app.get('db');
+var controller = require('./productCtrl.js');
 
 app.get('/auth/google', passport.authenticate('google',{scope: ['https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']}));
-app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/#/'}), (req,res) => {
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/#/'}), function(req,res)  {
   res.redirect('/#/');
 });
 app.get('/me', function(req, res) {

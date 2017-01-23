@@ -1,42 +1,42 @@
-const app = require('./index');
-const db = app.get('db');
+var app = require('./index');
+var db = app.get('db');
 module.exports = {
-  GetAll: (req, res, next) => {
-    let offset = req.params.id * 21;
-    db.get_all(offset, (err, all) => {
+  GetAll: function(req, res, next)  {
+    var offset = req.params.id * 21;
+    db.get_all(offset, function(err, all)  {
       if(err) return res.status(500).send(err);
-      db.getCount((err, count) =>{
+      db.getCount(function(err, count){
         if(err) return next(err);
         res.send({all: all, count: count});
       });
     });
   },
-  GetWatches: (req, res, next) => {
-    db.get_watches((err, watches) => {
+  GetWatches: function(req, res, next)  {
+    db.get_watches(function(err, watches) {
       if(err) return res.status(500).send(err);
       else return res.send(watches);
     });
   },
-  GetWatches17: (req, res, next) => {
-    db.get_watches_17((err, watches) =>{
+  GetWatches17: function(req, res, next) {
+    db.get_watches_17(function(err, watches) {
       if(err) return res.status(500).send(err);
       else return res.send(watches);
     });
   },
-  GetWatches13: (req,res,next) => {
-    db.get_watches_13((err, watches) => {
+  GetWatches13: function(req,res,next) {
+    db.get_watches_13(function(err, watches) {
       if(err) return res.status(500).send(err);
       else return res.send(watches);
     });
   },
-  GetSunglasses: (req, res, next) => {
+  GetSunglasses: function(req, res, next) {
 
-    db.get_sunglasses((err, getAll) => {
+    db.get_sunglasses(function(err, getAll) {
       if(err) return res.status(500).send(err);
       else return res.send(getAll);
     });
   },
-  GetFour: (req, res, next) =>{
+  GetFour: function(req, res, next){
     db.get_four(function(err, four) {
       if(err) {
         res.status(500).send(err);
@@ -46,7 +46,7 @@ module.exports = {
       }
     });
   },
-  GetFourStainless: (req, res, next) => {
+  GetFourStainless: function(req, res, next)  {
     db.get_four_stainless(function(err, four) {
       if(err) {
         res.status(500).send(err);
@@ -56,7 +56,7 @@ module.exports = {
       }
     });
   },
-  GetFourSunGlasses: (req, res, next) => {
+  GetFourSunGlasses: function(req, res, next) {
     db.get_four_sunglass(function(err, four) {
       if(err) {
         res.status(500).send(err);
@@ -66,9 +66,9 @@ module.exports = {
       }
     });
   },
-  GetOne: (req, res, next) => {
+  GetOne: function(req, res, next) {
     // console.log(req.params.productId);
-    db.get_one([req.params.productId], (err, one) => {
+    db.get_one([req.params.productId], function(err, one) {
       if(err) {
         res.status(500).send(err);
       }
@@ -77,12 +77,12 @@ module.exports = {
       }
     });
   },
-  PutUser: (req, res, next) => {
-    db.check_username([req.body.username], (err, username) => {
+  PutUser: function(req, res, next) {
+    db.check_username([req.body.username], function(err, username) {
       console.log(username);
       if(err) return next(err);
       else if(username[0]) res.send("username taken");
-        else if (!username[0]) {db.post_user([req.body.firstname, req.body.lastname, req.body.username, req.body.email, req.body.password], (err, user) => {
+        else if (!username[0]) {db.post_user([req.body.firstname, req.body.lastname, req.body.username, req.body.email, req.body.password], function(err, user) {
             if(err) return next(err);
             else {
               res.send(user);
@@ -91,8 +91,8 @@ module.exports = {
         }
     });
   },
-  GetUser: (req, res, next) => {
-    db.get_user((err, user) => {
+  GetUser: function(req, res, next) {
+    db.get_user(function(err, user) {
       if(err) {
         res.status(500).send(err);
       }
@@ -101,8 +101,8 @@ module.exports = {
       }
     });
   },
-  login: (req, res, next) => {
-    db.get_user([req.body.name, req.body.password], (err, user) => {
+  login: function(req, res, next)  {
+    db.get_user([req.body.name, req.body.password], function(err, user)  {
       if(err) {
         return res.status(500).send(err);
       }
@@ -111,9 +111,9 @@ module.exports = {
       }
     });
   },
-  pageNum: (req, res, next) => {
+  pageNum: function(req, res, next) {
     var offset = req.query.page * 20;
-    db.get_page_num(offset, (err, pageNum) => {
+    db.get_page_num(offset, function(err, pageNum)  {
       console.log(pageNum);
       if(err) {
         return res.status(500).send(err);
@@ -123,28 +123,28 @@ module.exports = {
       }
     });
   },
-  placeOrder: (req, res, next) => {
-    db.orders.update({user_id: req.body.user_id}, {checked_out: true}, (err, order) => {
+  placeOrder: function(req, res, next) {
+    db.orders.update({user_id: req.body.user_id}, {checked_out: true}, function(err, order) {
       if (err) return res.status(500).json(err);
       return res.status(201).json(order);
     });
   },
-  getOrder: (req, res, next) => {
-    db.get_orders([req.params.id], (err, orders) => {
+  getOrder: function(req, res, next) {
+    db.get_orders([req.params.id], function(err, orders) {
       if (err) return res.status(500).json(err);
       return res.status(200).json(orders);
     });
   },
-  getOrderTotal: (req, res, next) => {
+  getOrderTotal: function(req, res, next) {
     console.log(req.params.id)
-    db.get_order_total([req.params.id], (err, orderTotal) => {
+    db.get_order_total([req.params.id], function(err, orderTotal) {
       console.log(orderTotal);
       if (err) return res.status(500).json(err);
       return res.status(200).json(orderTotal);
     });
   },
-  totalPrice: (req,res,next) => {
-    db.total_price((err, data) => {
+  totalPrice: function(req,res,next) {
+    db.total_price(function(err, data) {
       if(err) {
         res.send(err);
       }
@@ -153,8 +153,8 @@ module.exports = {
       }
     });
   },
-  getCartTotal: (req, res, next) => {
-    db.get_total(req.body.order_id, (err, order) => {
+  getCartTotal: function(req, res, next) {
+    db.get_total(req.body.order_id, function(err, order) {
       if(err) {
         res.send(err);
       }
@@ -163,49 +163,49 @@ module.exports = {
       }
     });
   },
-  getCart: (req, res, next) => {
+  getCart: function(req, res, next)  {
     console.log(req.params)
-    db.get_existing_cart([req.params.id], (err, cart) => {
+    db.get_existing_cart([req.params.id], function(err, cart) {
       console.log("Err: ", err);
       console.log("Cart: ", cart);
       if (err) return res.status(500).json(err);
       else return res.status(200).json(cart);
     });
   },
-  updateCart: (req, res, next) => {
-    db.update_cart([req.body.orderId, req.body.productId, req.body.quantity], (err, orderItem) => {
+  updateCart: function(req, res, next) {
+    db.update_cart([req.body.orderId, req.body.productId, req.body.quantity], function(err, orderItem) {
       if (err) return res.status(500).json(err);
-      db.get_existing_cart([req.body.userId], (err, cart) => {
+      db.get_existing_cart([req.body.userId], function(err, cart) {
         if (err) return res.status(500).json(err);
         return res.status(200).json(cart);
       });
     });
   },
-  deleteProduct: (req, res, next) => {
+  deleteProduct: function(req, res, next) {
     console.log("delete", req.body.id);
 
-    db.delete_product([req.body.productId], (err, product) => {
+    db.delete_product([req.body.productId], function(err, product) {
 
       if (err) return res.status(500).json(err);
-      else db.get_existing_cart([req.body.userId], (err, cart) => {
+      else db.get_existing_cart([req.body.userId], function(err, cart) {
             if (err) return res.status(500).json(err);
             else return res.status(200).json(cart);
           });
     });
   },
-  addToCart: (req, res, next) => {
+  addToCart: function(req, res, next)  {
     // res.send(req.body);
-    db.get_order(req.body.userId, (err, order) => {
+    db.get_order(req.body.userId, function(err, order)  {
       if(err) return next(err);
 
       if(order[0] && !order[0].checked_out) {
 
 
-        db.add_cart([order[0].order_id, req.body.product, req.body.quantity, req.body.price], (err, data) => {
+        db.add_cart([order[0].order_id, req.body.product, req.body.quantity, req.body.price], function(err, data)  {
           if(err) return next(err);
-          db.get_cart(order[0].order_id, (err, cart) => {
+          db.get_cart(order[0].order_id, function(err, cart) {
             if(err) return next(err);
-            db.get_total(order[0].order_id, (err, total) => {
+            db.get_total(order[0].order_id, function(err, total)  {
               if(err) return next(err);
               return res.send({
                 cart: cart,
@@ -216,17 +216,17 @@ module.exports = {
         });
       }
       else {
-        db.create_order([req.body.userId, new Date()], (err, order) => {
+        db.create_order([req.body.userId, new Date()], function(err, order) {
           if(err) return next(err);
-          db.get_order([req.body.userId], (err, order) => {
+          db.get_order([req.body.userId], function(err, order) {
             if(err) return next(err);
             console.log(order[0].order_id, req.body.product, req.body.quantity);
             db.add_cart([order[0].order_id, req.body.product, req.body.quantity, req.body.price],
-            (err, data) => {
+            function(err, data) {
               if(err) return next(err);
-              db.get_cart(order[0].order_id, (err, cart) => {
+              db.get_cart(order[0].order_id, function(err, cart) {
                 if(err) return next(err);
-                db.get_total(order[0].order_id, (err, total) => {
+                db.get_total(order[0].order_id, function(err, total)  {
                   if(err) return next(err);
                   return res.send({
                     cart: cart,
