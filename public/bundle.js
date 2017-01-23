@@ -44,8 +44,22 @@ angular.module('myApp', ['ui.router']).config(function ($stateProvider, $urlRout
     url: '/watches/17',
     templateUrl: './assets/views/1.7.html',
     controller: '1.7Ctrl'
+  }).state('13', {
+    url: '/watches/13',
+    templateUrl: './assets/views/1.3.html',
+    controller: '1.3Ctrl'
   });
   $urlRouterProvider.otherwise('/');
+});
+"use strict";
+
+angular.module('myApp').controller("1.3Ctrl", function ($scope, mainSvc) {
+    $scope.get13 = function () {
+        mainSvc.get13().then(function (res) {
+            $scope.infos = res;
+        });
+    };
+    $scope.get13();
 });
 'use strict';
 
@@ -183,7 +197,7 @@ angular.module('myApp').controller('loginCtrl', function ($scope, $state, mainSv
 });
 'use strict';
 
-angular.module('myApp').controller('mainCtrl', function ($scope, mainSvc, $location, $stateParams) {
+angular.module('myApp').controller('mainCtrl', function ($scope, mainSvc, $location, $stateParams, $timeout, $anchorScroll) {
   console.log($stateParams);
   $scope.customer = $stateParams.user;
   $scope.getData = function () {
@@ -210,6 +224,12 @@ angular.module('myApp').controller('mainCtrl', function ($scope, mainSvc, $locat
     mainSvc.getDataFourSunglass().then(function (res) {
       $scope.sunglasses = res.data;
     });
+  };
+  $scope.scrollTo = function (id) {
+    $timeout(function () {
+      $location.hash(id);
+      $anchorScroll();
+    }, 0);
   };
 
   $scope.getData();
@@ -281,6 +301,67 @@ angular.module('myApp').controller('watchesCtrl', function ($scope, mainSvc) {
 });
 'use strict';
 
+angular.module('myApp').directive('bottomMenu', function () {
+  return {
+    restrict: 'EA',
+    templateUrl: '../../../assets/views/bottompage.html'
+  };
+});
+'use strict';
+
+angular.module('myApp').directive('homeMenu', function () {
+  return {
+    restrict: 'EA',
+    templateUrl: '../../../assets/views/homepage-menu.html',
+
+    link: function link(scope, element, attributes) {
+      $(window).on('scroll', function () {
+
+        if ($(window).scrollTop() > 50) {
+          $('.navbar-brand>img').css({ "filter": "brightness(1) invert(0)" });
+          $('.navbar').css({ "background-color": "white", "border-bottom": "1px solid black" });
+          $('.nav.navbar-nav.navbar-right li, #main-page-menu').css({ "color": "black" });
+          $('.container-fluid').css({ "height": "15vh" });
+        } else if ($(window).scrollTop() < 50) {
+          $('.navbar-brand>img').css({ "filter": "brightness(0) invert(1)" });
+          $('.navbar').css({ "background-color": "transparent", "border-bottom": "none" });
+          $('#navbar-right li, #main-page-menu').css({ "color": "white" });
+        }
+      });
+    }
+  };
+});
+
+// $('.infoBox').on('mouseover', function() {
+//
+//   $('.infoBox').animate({height: '400px', width: '700px'});
+// });
+'use strict';
+
+angular.module('myApp').directive('menuLeft', function () {
+  return {
+    restrict: 'EA',
+    templateUrl: '../../../assets/views/menu-left.html'
+  };
+});
+'use strict';
+
+angular.module('myApp').directive('menDirective', function () {
+  return {
+    restrict: 'EA',
+    templateUrl: '../../../assets/views/menu-top.html'
+  };
+});
+'use strict';
+
+angular.module('myApp').directive('menuDirective', function () {
+  return {
+    restrict: 'EA',
+    templateUrl: '../../../assets/views/test.html'
+  };
+});
+'use strict';
+
 angular.module('myApp').service('mainSvc', function ($http, $rootScope) {
   this.customer = {};
   this.cart = [];
@@ -302,6 +383,11 @@ angular.module('myApp').service('mainSvc', function ($http, $rootScope) {
   this.get17 = function () {
     return $http.get('/api/product/watches/1.7-inches').then(function (res) {
       // console.log(res);
+      return res.data;
+    });
+  };
+  this.get13 = function () {
+    return $http.get('/api/product/watches/1.3-inches').then(function (res) {
       return res.data;
     });
   };
@@ -471,65 +557,4 @@ angular.module('myApp').service('mainSvc', function ($http, $rootScope) {
   //   return res;
   // });
 
-});
-'use strict';
-
-angular.module('myApp').directive('bottomMenu', function () {
-  return {
-    restrict: 'EA',
-    templateUrl: '../../../assets/views/bottompage.html'
-  };
-});
-'use strict';
-
-angular.module('myApp').directive('homeMenu', function () {
-  return {
-    restrict: 'EA',
-    templateUrl: '../../../assets/views/homepage-menu.html',
-
-    link: function link(scope, element, attributes) {
-      $(window).on('scroll', function () {
-
-        if ($(window).scrollTop() > 50) {
-          $('.navbar-brand>img').css({ "filter": "brightness(1) invert(0)" });
-          $('.navbar').css({ "background-color": "white", "border-bottom": "1px solid black" });
-          $('.nav.navbar-nav.navbar-right li').css({ "color": "black" });
-          $('.container-fluid').css({ "height": "15vh" });
-        } else if ($(window).scrollTop() < 50) {
-          $('.navbar-brand>img').css({ "filter": "brightness(0) invert(1)" });
-          $('.navbar').css({ "background-color": "transparent", "border-bottom": "none" });
-          $('#navbar-right li').css({ "color": "white" });
-        }
-      });
-    }
-  };
-});
-
-// $('.infoBox').on('mouseover', function() {
-//
-//   $('.infoBox').animate({height: '400px', width: '700px'});
-// });
-'use strict';
-
-angular.module('myApp').directive('menuLeft', function () {
-  return {
-    restrict: 'EA',
-    templateUrl: '../../../assets/views/menu-left.html'
-  };
-});
-'use strict';
-
-angular.module('myApp').directive('menDirective', function () {
-  return {
-    restrict: 'EA',
-    templateUrl: '../../../assets/views/menu-top.html'
-  };
-});
-'use strict';
-
-angular.module('myApp').directive('menuDirective', function () {
-  return {
-    restrict: 'EA',
-    templateUrl: '../../../assets/views/test.html'
-  };
 });
