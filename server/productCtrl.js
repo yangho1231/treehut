@@ -23,6 +23,12 @@ module.exports = {
       else return res.send(watches);
     });
   },
+  GetWatches13: (req,res,next) => {
+    db.get_watches_13((err, watches) => {
+      if(err) return res.status(500).send(err);
+      else return res.send(watches);
+    });
+  },
   GetSunglasses: (req, res, next) => {
 
     db.get_sunglasses((err, getAll) => {

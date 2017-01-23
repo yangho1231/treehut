@@ -1,4 +1,4 @@
-angular.module('myApp').controller('mainCtrl', function($scope, mainSvc, $location, $stateParams) {
+angular.module('myApp').controller('mainCtrl', function($scope, mainSvc, $location, $stateParams, $timeout, $anchorScroll) {
   console.log($stateParams);
   $scope.customer = $stateParams.user;
   $scope.getData = function() {
@@ -25,6 +25,12 @@ $scope.getDataFourSunglass = function() {
   mainSvc.getDataFourSunglass().then(function(res) {
     $scope.sunglasses = res.data;
   });
+};
+$scope.scrollTo = function(id) {
+  $timeout(function(){
+    $location.hash(id);
+    $anchorScroll();
+  }, 0);
 };
 
   $scope.getData();

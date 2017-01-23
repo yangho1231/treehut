@@ -106,7 +106,7 @@
     <div class = 'product-info-wrap' ng-repeat = 'data in fours'>
       <div class = 'widthset'>
 
-      <div class = 'display'>
+      <div class = 'display' ng-click='getIndividual($index); scrollTo("top-page")' ui-sref="info({id: data.product_id})">
         <img class = 'img-home img-responsive' ng-src = '{{data.img1}}'></img>
       </div>
 
@@ -120,7 +120,7 @@
 
     <div class = 'product-info-wrap' ng-repeat = 'data in sunglasses'>
       <div class = 'widthset'>
-      <div class = 'display'>
+      <div class = 'display' ng-click='getIndividual($index); scrollTo("top-page")' ui-sref="info({id: data.product_id})">
         <img class = 'img-home img-responsive' ng-src = '{{data.img1}}'></img>
       </div>
       <div>{{data.product_name}}</div>
@@ -130,7 +130,7 @@
 
     <div class = 'product-info-wrap' ng-repeat = 'data in stains'>
       <div class = 'widthset'>
-      <div class = 'display' ng-click='getIndividual($index)' ui-sref = 'info({id: data.product_id})'>
+      <div class = 'display' ng-click='getIndividual($index); scrollTo("top-page")' ui-sref = 'info({id: data.product_id})'>
         <img class = 'img-home img-responsive' ng-src = '{{data.img1}}'></img>
       </div>
       <div>{{data.product_name}}</div>

@@ -22,6 +22,11 @@ angular.module('myApp').service('mainSvc', function($http, $rootScope) {
       return res.data;
     });
   };
+  this.get13 = function() {
+    return $http.get('/api/product/watches/1.3-inches').then(function(res) {
+      return res.data;
+    })
+  }
   this.getSunglasses = function() {
     return $http.get('/api/product/sunglasses').then(function(res) {
       return res.data;

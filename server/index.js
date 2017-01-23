@@ -75,6 +75,7 @@ app.get('/api/product/stain', controller.GetFourStainless);
 app.get('/api/product/sunglass', controller.GetFourSunGlasses);
 app.get('/api/product/watches', controller.GetWatches);
 app.get('/api/product/watches/1.7-inches', controller.GetWatches17);
+app.get('/api/product/watches/1.3-inches', controller.GetWatches13);
 app.get('/api/product/sunglasses', controller.GetSunglasses);
 app.get('/api/product/:productId', controller.GetOne);
 app.post('/api/user', controller.PutUser);
