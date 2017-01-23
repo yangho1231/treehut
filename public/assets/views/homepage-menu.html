@@ -19,20 +19,23 @@
     <!-- <div ui-sref = 'home' class = 'logo'></div> -->
     <li ui-sref = "hot">HOT</li>
     <li class = 'dropdown' ui-sref = 'watches'>
-      <div class = 'dropbtn'>WATCHES</div>
-        <div class = 'dropdown-content'>
-          <a ui-sref = '1.7'>1.7 INCHES (DIAMETER)</a>
-          <a href = '#'>1.3 INCHES (DIAMETER)</a>
-          <a href = '#'>CANVAS WATCHES</a>
-          <a href = '#'>COUPLES WATCHES</a>
-        </div>
+      <div id="main-page-menu"class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true""btn btn-default dropdown-toggle" data-toggle="dropdown">WATCHES
+  </div>
+        <ul class = 'dropdown-menu' aria-labelledby="dropdownMenu1">
+          <li><a ui-sref = '17' ng-click="$event.stopPropagation()">1.7 INCHES (DIAMETER)</a></li>
+          <li><a ui-sref = '13' ng-click="$event.stopPropagation()">1.3 INCHES (DIAMETER)</a></li>
+          <li><a href = '#'>CANVAS WATCHES</a></li>
+          <li><a href = '#'>COUPLES WATCHES</a></li>
+        </ul>
     </li>
+
     <li class = 'dropdown' ui-sref = 'sunglasses'>
-      <div class = 'dropbtn'>SUNGLASSES</div>
-        <div class = 'dropdown-content'>
-          <a href = '#'>FOR HIM</a>
-          <a href = '#'>FOR HER</a>
-        </div>
+      <div id="main-page-menu" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true""btn btn-default dropdown-toggle" data-toggle="dropdown">SUNGLASSES
+  </div>
+        <ul class = 'dropdown-menu'>
+          <li><a href = '#'>FOR HIM</a></li>
+          <li><a href = '#'>FOR HER</a></li>
+        </ul>
     </li>
 
     <li ui-sref = "#contacts">OUR STORY</li>

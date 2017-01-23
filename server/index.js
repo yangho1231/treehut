@@ -1,3 +1,4 @@
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -11,6 +12,7 @@ var massive = massive.connectSync({connectionString: process.env.elephantUrl});
 var app = module.exports =express();
 app.use(express.static(__dirname + '/../public'));
 
+
 //passport
 app.use(passport.initialize());
 app.use(passport.session());
@@ -23,15 +25,17 @@ app.use(session({
 }));
 
 passport.use(new GoogleStrategy({
+
   clientID: process.env.googleId,
   clientSecret: process.env.googleSecret,
   callbackURL: 'https://treehutclone.herokuapp.com/auth/google/callback'
 }, function(accessToken, refreshToken, profile, done) {
   db.users.findOne({google_id: profile.id}, function(err, dbRes) {
+
     // console.log("dbRes", dbRes);
     if(!dbRes) {
       console.log("User not found. Creating...");
-      db.users.insert({name: profile.displayName, type: 'client', google_id: profile.id, photo: profile.photos[0].value}, function(err, dbRes) {
+      db.users.insert({name: profile.displayName, type: 'client', google_id: profile.id, photo: profile.photos[0].value}, (err, dbRes) => {
         // console.log(profile);
         if(err) {
           // console.log(err);
@@ -48,22 +52,24 @@ passport.use(new GoogleStrategy({
     }
   });
 }));
-passport.serializeUser(function(user, done) {
+passport.serializeUser((user, done) => {
   done(null, user);
 });
-passport.deserializeUser(function(obj, done) {
+passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
+
 var corsOptions = {
   origin: 'https://treehutclone.herokuapp.com'
+
 };
 app.use(cors(corsOptions));
 app.set('db', massive);
-var db = app.get('db');
-var controller = require('./productCtrl.js');
+const db = app.get('db');
+const controller = require('./productCtrl.js');
 
 app.get('/auth/google', passport.authenticate('google',{scope: ['https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']}));
-app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/#/'}), function(req,res) {
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/#/'}), (req,res) => {
   res.redirect('/#/');
 });
 app.get('/me', function(req, res) {
@@ -75,6 +81,7 @@ app.get('/api/product/stain', controller.GetFourStainless);
 app.get('/api/product/sunglass', controller.GetFourSunGlasses);
 app.get('/api/product/watches', controller.GetWatches);
 app.get('/api/product/watches/1.7-inches', controller.GetWatches17);
+app.get('/api/product/watches/1.3-inches', controller.GetWatches13);
 app.get('/api/product/sunglasses', controller.GetSunglasses);
 app.get('/api/product/:productId', controller.GetOne);
 app.post('/api/user', controller.PutUser);
@@ -92,6 +99,8 @@ app.get('/api/orderTotal/:id', controller.getOrderTotal)
 app.post('/api/remove-product', controller.deleteProduct);
 
 
+
 app.listen(process.env.PORT, function() {
+
   console.log("listening");
 });

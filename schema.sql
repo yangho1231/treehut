@@ -54,6 +54,16 @@ CREATE TABLE users (
 INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (1,'http://cdn.shopify.com/s/files/1/0667/0685/products/004-1_grande.jpg?v=1479952382','http://cdn.shopify.com/s/files/1/0667/0685/products/004-1-3_grande.jpg?v=1479952382',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/004-2-2_grande.jpg?v=1479952382','http://cdn.shopify.com/s/files/1/0667/0685/products/HUT004_grande.jpg?v=1479952382',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/004-2_grande.jpg?v=1479952382','http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-004-2_grande.jpg?v=1479952382');
+
+INSERT INTO image (img_id, img1, img2, img3, img4) VALUES (2,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-031-2_grande.jpg?v=1480018111','http://cdn.shopify.com/s/files/1/0667/0685/products/HUT031-4_grande.jpg?v=1480018111',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-031_92c8055d-b0aa-4e29-87d9-85866ee334af_grande.jpg?v=1480018118','http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-22-031-1_ba856cd9-53e7-40ef-b194-74bd319eef64_grande.jpg?v=1480018124');
+
+INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (3,'http://cdn.shopify.com/s/files/1/0667/0685/products/004-1_grande.jpg?v=1479952382','http://cdn.shopify.com/s/files/1/0667/0685/products/004-1-3_grande.jpg?v=1479952382',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/004-2-2_grande.jpg?v=1479952382','http://cdn.shopify.com/s/files/1/0667/0685/products/HUT004_grande.jpg?v=1479952382',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/004-2_grande.jpg?v=1479952382',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-004-2_grande.jpg?v=1479952382');
+
+
 INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (4,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-3331-2-2_grande.jpg?v=1479952605',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-3331-3_grande.jpg?v=1479952605',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-3331-8_grande.jpg?v=1479952605',
@@ -61,7 +71,25 @@ INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (4,'http:/
 'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-22-3331_grande.jpg?v=1479952605',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/IMG_9872_5cbea988-253b-44cf-adc4-2e1d5fa5f4d4_grande.JPG?v=1479952605');
 
-select * from imageINSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (8,'http://cdn.shopify.com/s/files/1/0667/0685/products/009-1_grande.jpg?v=1479947623',
+INSERT INTO image (img_id, img1, img2, img3) VALUES (5,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-22-007_grande.jpg?v=1480124174',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-007-3_grande.jpg?v=1480124174',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-22-SS7_9584869c-534f-4036-b13a-344714f2e4bf_grande.jpg?v=1480124190');
+
+INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (6,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-3431-7_0b9aff86-8c00-4696-959e-e7d95c667b5a_grande.jpg?v=1480103510',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-3431-5-2_grande.jpg?v=1480103515',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-3431-11-2_grande.jpg?v=1479944039',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-3431-16_grande.jpg?v=1479944039',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-3431_grande.jpg?v=1479944065',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-44_1172b67d-14f3-43b3-94b9-0b8044444b79_grande.jpg?v=1479944039');
+
+INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (7,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-YIN331_grande.jpg?v=1479944234',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-YIN331-2_grande.jpg?v=1479944240',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-YIN331-5_grande.jpg?v=1479944245',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/0F5A5580_grande.jpg?v=1479944250',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-YIN331_67f4aa08-dada-4058-b8f3-ccdfd0147423_grande.jpg?v=1479944263',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/IMG_9872_70e0c1f3-6947-4da8-8cda-9d53eaeb1efd_grande.JPG?v=1479944214');
+
+INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (8,'http://cdn.shopify.com/s/files/1/0667/0685/products/009-1_grande.jpg?v=1479947623',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/009-1-2_grande.jpg?v=1479947623',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-3331-8_grande.jpg?v=1479952605',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/009-2_grande.jpg?v=1479947623',
@@ -94,12 +122,6 @@ INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (12,'http:
 'http://cdn.shopify.com/s/files/1/0667/0685/products/0F5A0963-2_88ad8114-f9f8-4e64-9551-cfe7eff04cef_grande.jpg?v=1480103271',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/IMG_9872_5cbea988-253b-44cf-adc4-2e1d5fa5f4d4_grande.JPG?v=1479952605');
 
-INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (12,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-3331-2-2_grande.jpg?v=1479952605',
-'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-3331-3_grande.jpg?v=1479952605',
-'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT22-3331-8_grande.jpg?v=1479952605',
-'http://cdn.shopify.com/s/files/1/0667/0685/products/IMG_6437_grande.jpg?v=1479952605',
-'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-22-3331_grande.jpg?v=1479952605',
-'http://cdn.shopify.com/s/files/1/0667/0685/products/IMG_0131_901f192b-cb42-4738-a09d-fa2d07eba5d9_grande.jpg?v=1480103276');
 
 INSERT INTO image (img_id, img1, img2, img3, img4, img5, img6) VALUES (13,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-3331-2-2_grande.jpg?v=1480101991',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-3331-3_grande.jpg?v=1480101991',
@@ -301,6 +323,12 @@ INSERT INTO image (img_id, img1, img2, img3, img4, img5) VALUES (45,'http://cdn.
 'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-031_2e8c4d70-cf95-4b03-8e77-ec467d477c28_grande.jpg?v=1480017141');
 
 INSERT INTO image (img_id, img1, img2, img3, img4, img5) VALUES (46,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-SS0396_grande.jpg?v=1457558722',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-SS0396-2_grande.jpg?v=1457558722',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/treehutwatches-35_334adcc2-793a-42a9-b1fd-1ef56822f5d5_grande.jpg?v=1457558722',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/IMG_8634_1b009bdd-8cf5-4c8a-b1be-7d4fd909061d_grande.jpg?v=1457558722',
+'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-BOX_aa3558de-795a-489c-935c-de468e95dada_grande.jpg?v=1457558722');
+
+INSERT INTO image (img_id, img1, img2, img3, img4, img5) VALUES (47,'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-SS0396_grande.jpg?v=1457558722',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-SS0396-2_grande.jpg?v=1457558722',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/treehutwatches-35_334adcc2-793a-42a9-b1fd-1ef56822f5d5_grande.jpg?v=1457558722',
 'http://cdn.shopify.com/s/files/1/0667/0685/products/IMG_8634_1b009bdd-8cf5-4c8a-b1be-7d4fd909061d_grande.jpg?v=1457558722',
@@ -643,6 +671,16 @@ VALUES (101, 'http://cdn.shopify.com/s/files/1/0667/0685/products/HUT-W16-5-2_gr
 'http://cdn.shopify.com/s/files/1/0667/0685/products/Clubmaster_Wafar_Rina_fa8fa09a-1d2d-490b-ad1b-ee83e5768e20_grande.jpg?v=1462571893');
 
 /* INSERT PRODUCTS*/
+
+INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
+VALUES('WOODEN WATCH // BOYD', 59, 'The bamboo wooden watch is equipped with high quality Japan quartz movement. Diameter of the dial 1.7 inches. Strap is made of genuine leather.', 'WATCH',
+74, '• Watch made from Real Wood • Japanese Quartz movement
+• Strap made from genuine leather
+• High Quality Soft Genuine Leather for your everyday wear
+• Minimalist Design
+• Durable & Long Lasting
+• Next business day shipping if no engraving services needed.', '1.7 Inches');
+
 INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
 VALUES('WOODEN WATCH // THEO', 69, 'The Ebony wooden watch is equipped with high quality Japan quartz movement. Diameter of the dial 1.7 inches. Strap is made of genuine leather.', 'WATCH',
 74, '• Watch made from Real Wood • Japanese Quartz movement
@@ -653,8 +691,47 @@ VALUES('WOODEN WATCH // THEO', 69, 'The Ebony wooden watch is equipped with high
 • Next business day shipping if no engraving services needed.', '1.7 Inches');
 
 INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
+VALUES('WOODEN WATCH // NOVA', 65, 'The bamboo wooden watch is equipped with high quality Japan quartz movement. Diameter of the dial 1.7 inches. Strap is made of genuine leather.', 'WATCH',
+80, '• Watch made from Real Wood • Japanese Quartz movement
+• Strap made from genuine leather
+• High Quality Soft Genuine Leather for your everyday wear
+• Minimalist Design
+• Durable & Long Lasting
+• Next business day shipping if no engraving services needed.', '1.7 Inches');
+
+INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
 VALUES('ALL WOOD WATCH // ALL EBONY THEO BLUE', 95, 'The all ebony wooden watch is equipped with high quality Japan quartz movement and stainless steel tri-fold clasp with push buttons. Diameter of the dial 1.7 inches. Strap and case are made of 100% ebony.', 'WATCH',
 110, '• Handmade in San Francisco, USA
+• Ship Next Business Day with rush engraving option!
+• Watch and Watch Band Made from Real Wood
+• Japanese Quartz Movement
+• Clasp Made from Stainless Steel Tri-Fold with Push Buttons
+• Minimalist Design
+• Durable & Long Lasting', '1.7 Inches');
+
+INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
+VALUES ('WOODEN WATCH // BOYD BLUE', 79, 'The bamboo wooden watch is equipped with high quality Japan quartz movement. Diameter of the dial 1.7 inches. Strap is made of genuine leather.', 'WATCH',
+    94, '• Watch made from Real Wood
+• Japanese Quartz movement
+• Strap made from genuine leather
+• High Quality Soft Genuine Leather for your everyday wear
+• Minimalist Design
+• Durable & Long Lasting
+• Next business day shipping if no engraving services needed.', '1.7 Inches');
+
+INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
+VALUES('ALL WOOD WATCH // ZEBRAWOOD + EBONY 31', 74, 'The all ebony wooden watch is equipped with high quality Japan quartz movement and stainless steel tri-fold clasp with push buttons. Diameter of the dial 1.7 inches. Strap and case are made of 100% ebony.', 'WATCH',
+89, '• Handmade in San Francisco, USA
+• Ship Next Business Day with rush engraving option!
+• Watch and Watch Band Made from Real Wood
+• Japanese Quartz Movement
+• Clasp Made from Stainless Steel Tri-Fold with Push Buttons
+• Minimalist Design
+• Durable & Long Lasting', '1.7 Inches');
+
+INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
+VALUES('STAINLESS STEEL WOOD WATCH // SILVER EBONY THEO', 134, 'Every Treehut watch is equipped with high quality Japan quartz movement and stainless steel tri-fold clasp with push buttons. Diameter of the dial 1.7 inches. Complementing casual, formal or business wear, this timepiece features a stainless steel bracelet and caseback highlighted with real wood inlays for a sleek and modern addition to your wardrobe.', 'WATCH',
+149, '• Handmade in San Francisco, USA
 • Ship Next Business Day with rush engraving option!
 • Watch and Watch Band Made from Real Wood
 • Japanese Quartz Movement
@@ -701,15 +778,6 @@ VALUES ('ALL WOOD WATCH // EBONY + WALNUT 31', 105, 'The bamboo wooden watch is 
 • Durable & Long Lasting
 • Next business day shipping if no engraving services needed.', '1.7 Inches');
 
-INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
-VALUES ('ALL WOOD WATCH // ZEBRAWOOD + OLIVE', 99, 'The bamboo wooden watch is equipped with high quality Japan quartz movement. Diameter of the dial 1.7 inches. Strap is made of genuine leather.', 'WATCH',
-    114, '• Watch made from Real Wood
-• Japanese Quartz movement
-• Strap made from genuine leather
-• High Quality Soft Genuine Leather for your everyday wear
-• Minimalist Design
-• Durable & Long Lasting
-• Next business day shipping if no engraving services needed.', '1.7 Inches');
 
 INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
 VALUES ('ALL WOOD WATCH // ALL EBONY THEO', 95, 'The bamboo wooden watch is equipped with high quality Japan quartz movement. Diameter of the dial 1.7 inches. Strap is made of genuine leather.', 'WATCH',
@@ -893,16 +961,6 @@ VALUES ('WOODEN WATCH // BOYD SMALL', 103, 'The bamboo wooden watch is equipped 
 • 3 ATM Water Resistant
 • Durable & Long Lasting
 • Next business day shipping if no engraving services needed.', '1.3 Inches');
-
-INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
-VALUES ('WOODEN WATCH // BOYD SMALL', 103, 'The bamboo wooden watch is equipped with high quality Japan quartz movement. Diameter of the dial 1.3 inches. Strap is made of genuine leather.', 'WATCH', 118, '• Perfect for Smaller Wrists
-• Watch Made from Real Wood
-• Japanese Quartz Movement
-• Strap Made from Genuine Leather
-• High Quality Soft Genuine Leather for Your Everyday Wear
-• Minimalist Design
-• Durable & Long Lasting
-• Next Business Day Shipping if No Engraving Services Needed', '1.3 Inches');
 
 INSERT INTO products (product_name, product_price, product_desc, product_type, engraving_price, product_ul, product_category)
 VALUES ('WOODEN WATCH // OLIVE ASH RED SMALL', 116, 'The bamboo wooden watch is equipped with high quality Japan quartz movement. Diameter of the dial 1.3 inches. Strap is made of genuine leather. Face of the watch is made from Olive Ash.', 'WATCH', 131, '• Perfect for Smaller Wrists

@@ -53,6 +53,11 @@ angular.module('myApp',['ui.router'])
       url: '/watches/17',
       templateUrl: './assets/views/1.7.html',
       controller: '1.7Ctrl'
+    })
+    .state('13', {
+      url: '/watches/13',
+      templateUrl: './assets/views/1.3.html',
+      controller: '1.3Ctrl'
     });
     $urlRouterProvider
     .otherwise('/');
